@@ -1,6 +1,6 @@
 import './filter.scss';
-import './header.css';
-import { useState } from 'react';
+import './header.scss';
+import { useState, useEffect } from 'react';
 function Filterpage () {
     const choices = ["餐飲臨售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
     const [choosed, setChoosed] = useState([false, false, false, false, false, false, false, false, false, false]);
@@ -11,6 +11,12 @@ function Filterpage () {
     const [foodc, setFoodc] = useState([false, false, false, false, false]);
     const [techc, setTechc] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 
         false, false, false, false, false, false]);
+
+    useEffect(() => {
+        setChoosed(JSON.parse(localStorage.getItem("choosed")));
+        setFoodc(JSON.parse(localStorage.getItem("foodc")));
+        setTechc(JSON.parse(localStorage.getItem("techc")));
+    }, []);
 
     const choose = (idx) => {
         let newArr = [...choosed];
@@ -54,6 +60,12 @@ function Filterpage () {
         }
         setChoosed(newArr);
         setMorejob(true);
+    }
+
+    const save_filter = () => {
+        localStorage.setItem("choosed", JSON.stringify(choosed));
+        localStorage.setItem("foodc", JSON.stringify(foodc));
+        localStorage.setItem("techc", JSON.stringify(techc));
     }
 
     return (
@@ -165,7 +177,10 @@ function Filterpage () {
                                 ))}
                             </div>
                         </div>
-                        <div className="continue" onClick={() => {window.location.href="/filterpage"}}>繼續</div>
+                        <div className="continue" onClick={() => {
+                            save_filter();
+                            window.location.href="/filterpage";
+                        }}>繼續</div>
                     </div>
                 }
             </div>

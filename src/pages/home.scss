@@ -1,0 +1,17 @@
+.Home{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    .content {
+        position: relative;
+        .pic {
+            position: relative;
+            width: 100%; 
+        }
+        .btn {
+            position: absolute;
+            width: 282px;
+        }
+    }
+}
