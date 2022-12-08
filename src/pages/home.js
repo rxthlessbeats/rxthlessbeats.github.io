@@ -2,7 +2,7 @@ import './home.css';
 import './header.css';
 function Homepage () {
     return (
-        <div className="Home">
+        <div className="Home" onClick={() => {window.location.href='/filterPage'}}>
             <div className="header">
                 <img src={require("../images/職人交響曲.png")} alt="職人交響曲"></img>
                 <div className="title">
