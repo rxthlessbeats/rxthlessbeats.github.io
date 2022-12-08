@@ -1,5 +1,5 @@
-import './home.css';
-import './header.css';
+import './home.scss';
+import './header.scss';
 function Homepage () {
     return (
         <div className="Home" onClick={() => {window.location.href='/filterPage'}}>
