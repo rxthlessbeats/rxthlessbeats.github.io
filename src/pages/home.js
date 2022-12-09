@@ -1,8 +1,8 @@
 import './home.scss';
 import './header.scss';
-function Homepage () {
+function HomePage () {
     return (
-        <div className="Home" onClick={() => {window.location.href='/filterPage'}}>
+        <div className="Home" onClick={() => {window.location.href='/filter'}}>
             <div className="header">
                 <img src={require("../images/職人交響曲.png")} alt="職人交響曲"></img>
                 <div className="title">
@@ -16,4 +16,4 @@ function Homepage () {
     );
 };
 
-export default Homepage;
+export default HomePage;

@@ -1,21 +1,21 @@
 import './filter.scss';
 import './header.scss';
 import { useState, useEffect } from 'react';
-function Filterpage () {
-    const choices = ["餐飲臨售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
+const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
+const food = ["儲備幹部", "銷售", "內場", "外場", "人資"];
+const tech = ["軟體工程師","研發工程師","研發技術員","製成工程師","殷備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
+    "業務人員","技術工程師","測試工程師","行政人員","生產技術員","技術操作員","焊錫技術員","品保工程師","品保人員","品管包装員",];
+function FilterPage () {
     const [choosed, setChoosed] = useState([false, false, false, false, false, false, false, false, false, false]);
     const [morejob, setMorejob] = useState(false);
-    const food = ["儲備幹部", "銷售", "內場", "外場", "人資"];
-    const tech = ["軟體工程師","研發工程師","研發技術員","製成工程師","殷備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
-        "業務人員","技術工程師","測試工程師","行政人員","生產技術員","技術操作員","焊錫技術員","品保工程師","品保人員","品管包装員",];
     const [foodc, setFoodc] = useState([false, false, false, false, false]);
     const [techc, setTechc] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 
         false, false, false, false, false, false]);
 
     useEffect(() => {
-        setChoosed(JSON.parse(localStorage.getItem("choosed")));
-        setFoodc(JSON.parse(localStorage.getItem("foodc")));
-        setTechc(JSON.parse(localStorage.getItem("techc")));
+        if (localStorage.getItem("choosed")) setChoosed(JSON.parse(localStorage.getItem("choosed")));
+        if (localStorage.getItem("foodc")) setFoodc(JSON.parse(localStorage.getItem("foodc")));
+        if (localStorage.getItem("techc")) setTechc(JSON.parse(localStorage.getItem("techc")));
     }, []);
 
     const choose = (idx) => {
@@ -24,20 +24,20 @@ function Filterpage () {
         setChoosed(newArr);
     };
 
-    const fchoose = (idx) => {
-        let newArr = [...foodc];
-        newArr[idx] = !newArr[idx];
-        setFoodc(newArr);
-    };
+    // const fchoose = (idx) => {
+    //     let newArr = [...foodc];
+    //     newArr[idx] = !newArr[idx];
+    //     setFoodc(newArr);
+    // };
     const fchooseALL = () => {
         let newArr = new Array(foodc.length).fill(true);
         setFoodc(newArr);
     }
-    const tchoose = (idx) => {
-        let newArr = [...techc];
-        newArr[idx] = !newArr[idx];
-        setTechc(newArr);
-    };
+    // const tchoose = (idx) => {
+    //     let newArr = [...techc];
+    //     newArr[idx] = !newArr[idx];
+    //     setTechc(newArr);
+    // };
     const tchooseALL = () => {
         let newArr = new Array(techc.length).fill(true);
         setTechc(newArr);
@@ -179,7 +179,7 @@ function Filterpage () {
                         </div>
                         <div className="continue" onClick={() => {
                             save_filter();
-                            window.location.href="/filterpage";
+                            window.location.href="/jobs";
                         }}>繼續</div>
                     </div>
                 }
@@ -188,4 +188,4 @@ function Filterpage () {
     );
 };
 
-export default Filterpage;
+export default FilterPage;
