@@ -7,15 +7,15 @@ import Jobs from './pages/jobs';
 
 function App() {
     return (
-        //<BrowserRouter>
-        //<Routes>
-        <HashRouter>
-            <Route path="/" element={<Home/>} />
-            <Route path="/filter" element={<Filter/>} />
-            <Route path="/jobs" element={<Jobs/>}/>
-        </HashRouter>    
-        //</Routes>
-        //</BrowserRouter>
+        <BrowserRouter>
+        {/* <HashRouter> */}
+            <Routes>   
+                <Route exact path="/" element={<Home/>} />
+                <Route exact path="/filter" element={<Filter/>} />
+                <Route exact path="/jobs" element={<Jobs/>}/>  
+            </Routes>
+        {/* </HashRouter> */}
+        </BrowserRouter>
     );
 }
 
