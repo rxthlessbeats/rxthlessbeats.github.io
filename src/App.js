@@ -8,13 +8,13 @@ import Jobs from './pages/jobs';
 function App() {
     return (
         <div className="App">
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home/>} />
-                    <Route path="/filter" element={<Filter/>} />
-                    <Route path="/jobs" element={<Jobs/>}/>
-                </Routes>
-            </BrowserRouter>
+            {/* <BrowserRouter> */}
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/filter" element={<Filter/>} />
+                <Route path="/jobs" element={<Jobs/>}/>
+            </Routes>
+            {/* </BrowserRouter> */}
         </div>
     );
 }
