@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.e9fb5808.css",
-    "main.js": "/static/js/main.21d016ab.js",
-    "static/media/勞工處網站封面.png": "/static/media/勞工處網站封面.dd7a5e1d0e380e4dd55a.png",
-    "static/media/inter-all-400-normal.woff": "/static/media/inter-all-400-normal.8c804432e8c67741aac0.woff",
-    "static/media/inter-latin-ext-400-normal.woff2": "/static/media/inter-latin-ext-400-normal.3a7a76525d98d25962eb.woff2",
-    "static/media/職人交響曲.png": "/static/media/職人交響曲.ce8bb9a8d5b3002a4ba2.png",
-    "static/media/inter-latin-400-normal.woff2": "/static/media/inter-latin-400-normal.be7cb18dc7caf47cf7e9.woff2",
-    "static/media/inter-cyrillic-ext-400-normal.woff2": "/static/media/inter-cyrillic-ext-400-normal.fcc125c4fef4b94c8b13.woff2",
-    "static/media/inter-greek-400-normal.woff2": "/static/media/inter-greek-400-normal.0278a49f9007106a0bf4.woff2",
-    "static/media/inter-cyrillic-400-normal.woff2": "/static/media/inter-cyrillic-400-normal.8684fef6e6411779f0b0.woff2",
-    "static/media/inter-greek-ext-400-normal.woff2": "/static/media/inter-greek-ext-400-normal.3f642a92b6e57b3a4b84.woff2",
-    "static/media/inter-vietnamese-400-normal.woff2": "/static/media/inter-vietnamese-400-normal.789afb71d327988e2fc8.woff2",
-    "index.html": "/index.html",
-    "main.e9fb5808.css.map": "/static/css/main.e9fb5808.css.map",
-    "main.21d016ab.js.map": "/static/js/main.21d016ab.js.map"
+    "main.css": "/rxthlessbeats.github.io/static/css/main.1aaed1a5.css",
+    "main.js": "/rxthlessbeats.github.io/static/js/main.4d7ab527.js",
+    "static/media/勞工處網站封面.png": "/rxthlessbeats.github.io/static/media/勞工處網站封面.dd7a5e1d0e380e4dd55a.png",
+    "static/media/inter-all-400-normal.woff": "/rxthlessbeats.github.io/static/media/inter-all-400-normal.8c804432e8c67741aac0.woff",
+    "static/media/inter-latin-ext-400-normal.woff2": "/rxthlessbeats.github.io/static/media/inter-latin-ext-400-normal.3a7a76525d98d25962eb.woff2",
+    "static/media/職人交響曲.png": "/rxthlessbeats.github.io/static/media/職人交響曲.ce8bb9a8d5b3002a4ba2.png",
+    "static/media/inter-latin-400-normal.woff2": "/rxthlessbeats.github.io/static/media/inter-latin-400-normal.be7cb18dc7caf47cf7e9.woff2",
+    "static/media/inter-cyrillic-ext-400-normal.woff2": "/rxthlessbeats.github.io/static/media/inter-cyrillic-ext-400-normal.fcc125c4fef4b94c8b13.woff2",
+    "static/media/inter-greek-400-normal.woff2": "/rxthlessbeats.github.io/static/media/inter-greek-400-normal.0278a49f9007106a0bf4.woff2",
+    "static/media/inter-cyrillic-400-normal.woff2": "/rxthlessbeats.github.io/static/media/inter-cyrillic-400-normal.8684fef6e6411779f0b0.woff2",
+    "static/media/inter-greek-ext-400-normal.woff2": "/rxthlessbeats.github.io/static/media/inter-greek-ext-400-normal.3f642a92b6e57b3a4b84.woff2",
+    "static/media/inter-vietnamese-400-normal.woff2": "/rxthlessbeats.github.io/static/media/inter-vietnamese-400-normal.789afb71d327988e2fc8.woff2",
+    "index.html": "/rxthlessbeats.github.io/index.html",
+    "main.1aaed1a5.css.map": "/rxthlessbeats.github.io/static/css/main.1aaed1a5.css.map",
+    "main.4d7ab527.js.map": "/rxthlessbeats.github.io/static/js/main.4d7ab527.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9fb5808.css",
-    "static/js/main.21d016ab.js"
+    "static/css/main.1aaed1a5.css",
+    "static/js/main.4d7ab527.js"
   ]
 }
