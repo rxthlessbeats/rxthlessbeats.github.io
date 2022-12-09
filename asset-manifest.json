@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6baeab4f.css",
-    "main.js": "/static/js/main.815d27d0.js",
+    "main.js": "/static/js/main.15fa09d3.js",
     "static/media/勞工處網站封面.png": "/static/media/勞工處網站封面.dd7a5e1d0e380e4dd55a.png",
     "static/media/inter-all-400-normal.woff": "/static/media/inter-all-400-normal.8c804432e8c67741aac0.woff",
     "static/media/inter-latin-ext-400-normal.woff2": "/static/media/inter-latin-ext-400-normal.3a7a76525d98d25962eb.woff2",
@@ -14,10 +14,10 @@
     "static/media/inter-vietnamese-400-normal.woff2": "/static/media/inter-vietnamese-400-normal.789afb71d327988e2fc8.woff2",
     "index.html": "/index.html",
     "main.6baeab4f.css.map": "/static/css/main.6baeab4f.css.map",
-    "main.815d27d0.js.map": "/static/js/main.815d27d0.js.map"
+    "main.15fa09d3.js.map": "/static/js/main.15fa09d3.js.map"
   },
   "entrypoints": [
     "static/css/main.6baeab4f.css",
-    "static/js/main.815d27d0.js"
+    "static/js/main.15fa09d3.js"
   ]
 }
