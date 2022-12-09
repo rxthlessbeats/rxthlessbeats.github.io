@@ -46,7 +46,7 @@
                 background-color: #FFFFFF;
                 margin: 2vh 0 ;
                 padding: 2vh 1vw;
-                border-radius: 5px;
+                border-radius: 15px;
                 font-size: 22px;
                 color: #454545;
                 position: relative;
@@ -61,7 +61,10 @@
                     float: left;
                 }
                 .req {
-                    float: right;
+                    // float: right;
+                    position: absolute;
+                    left: 48%;
+                    color: #454545;
                 }
                 .num {
                     color: #DA8787;
@@ -70,9 +73,16 @@
                 .comp {
                 }
                 .pla {
+                    display: inline;
                 }
                 .sal {
-                    color: #B20000;
+                    display: inline;
+                    position: absolute;
+                    right: 15%;
+                    color: #B30000;
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 400;
                 }
                 .save {
                     position: absolute;
