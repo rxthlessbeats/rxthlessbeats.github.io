@@ -18,6 +18,7 @@
             border-radius: 5px;
             height: auto;
             width: 43vw;
+            height: 7vh;
             padding: 0 1vw;
             overflow: scroll;
             white-space: nowrap;
@@ -25,10 +26,11 @@
             font-size: 20px;
             .f { 
                 margin: 1vh 0.5vw;
-                padding: 0.5vh 1vw;
+                padding: 0 1vw;
                 display: inline-block;
                 background-color: #F5F3F3;
                 border-radius: 10px;
+                line-height: 5vh;
                 .x {
                     display: inline;
                     margin-right: 0.5vw;
@@ -41,6 +43,7 @@
         .jobs {
             overflow-y: scroll;
             width: 45vw;
+            height: 73.5vh;
             // background-color: #FFE194;
             .j {
                 background-color: #FFFFFF;
@@ -68,9 +71,6 @@
                 }
                 .num {
                     color: #DA8787;
-                    
-                }
-                .comp {
                 }
                 .pla {
                     display: inline;
