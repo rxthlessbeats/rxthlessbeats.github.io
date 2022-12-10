@@ -44,6 +44,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "netlify-cli": "^12.2.9"
   }
 }
