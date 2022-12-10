@@ -1,7 +1,6 @@
 import './jobs.scss';
 import Header from '../global/header';
 import { useState, useEffect } from 'react';
-// import Iframe from 'react-iframe';
 const choices = ["餐飲臨售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
 const food = ["儲備幹部", "銷售", "內場", "外場", "人資"];
 const tech = ["軟體工程師","研發工程師","研發技術員","製成工程師","殷備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
@@ -50,8 +49,6 @@ function JobsPage () {
     return (
         <div className="Jobs">
             <Header/>
-            {/* <Iframe url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14484.80482740578!2d121.02204164999999!3d24.82279185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836f36414de07%3A0x805110a3b614b263!2z5Lqe5bC85YWLIOaWsOerueerueWMl-W6lw!5e0!3m2!1szh-TW!2stw!4v1670609998146!5m2!1szh-TW!2stw" 
-            width="600" height="450"/> */}
             <div className="body">
                 <div className="back" onClick={() => {
                     window.location.href = "./filter";
