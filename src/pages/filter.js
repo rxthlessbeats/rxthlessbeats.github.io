@@ -24,83 +24,42 @@ function FilterPage () {
         setChoosed(newArr);
     };
 
-    const fchoose = (idx) => {
-        let newArr = [...foodc];
-        newArr[idx] = !newArr[idx];
-        setFoodc(newArr);
-        if(newArr[idx] && !choosed[0]) { // choose
-            let newArr2 = [...choosed];
-            newArr2[0] = true;
-            setChoosed(newArr2);
-        } else if (!newArr[idx]) { // unchoose
-            for(let i=0; i<newArr.length; i++) {
-                if (newArr[i]) return;
-            }
-            let newArr2 = [...choosed];
-            newArr2[0] = false;
-            setChoosed(newArr2);
-        }
-    };
+    // const fchoose = (idx) => {
+    //     let newArr = [...foodc];
+    //     newArr[idx] = !newArr[idx];
+    //     setFoodc(newArr);
+    // };
     const fchooseALL = () => {
-        let canBeTrue = false;
-        for (let i=0; i<foodc.length; i++) {
-            if (!foodc[i]) {
-                canBeTrue = true;
-                break;
-            }
-        }
-        if (canBeTrue) {
-            let newArr = new Array(foodc.length).fill(true);
-            setFoodc(newArr);
-            let newArr2 = [...choosed];
-            newArr2[0] = true;
-            setChoosed(newArr2);
-        } else {
-            let newArr = new Array(foodc.length).fill(false);
-            setFoodc(newArr);
-            let newArr2 = [...choosed];
-            newArr2[0] = false;
-            setChoosed(newArr2);
-        }
+        let newArr = new Array(foodc.length).fill(true);
+        setFoodc(newArr);
     }
-    const tchoose = (idx) => {
-        let newArr = [...techc];
-        newArr[idx] = !newArr[idx];
-        setTechc(newArr);
-        if(newArr[idx] && !choosed[1]) { // choose
-            let newArr2 = [...choosed];
-            newArr2[1] = true;
-            setChoosed(newArr2);
-        } else if (!newArr[idx]) { // unchoose
-            for(let i=0; i<newArr.length; i++) {
-                if (newArr[i]) return;
-            }
-            let newArr2 = [...choosed];
-            newArr2[1] = false;
-            setChoosed(newArr2);
-        }
-    };
+    // const tchoose = (idx) => {
+    //     let newArr = [...techc];
+    //     newArr[idx] = !newArr[idx];
+    //     setTechc(newArr);
+    // };
     const tchooseALL = () => {
-        let canBeTrue = false;
-        for (let i=0; i<techc.length; i++) {
-            if (!techc[i]) {
-                canBeTrue = true;
-                break;
-            }
+        let newArr = new Array(techc.length).fill(true);
+        setTechc(newArr);
+    }
+
+    const expand = (id) => {
+        let newArr = [...choosed];
+        if (id === 0) { // food 
+            newArr[0] = !newArr[0];
+            if (newArr[1]) newArr[1] = 0; // disable tech
+            fchooseALL();
+            let newArr2 = new Array(techc.length).fill(false);
+            setTechc(newArr2);
+        } else { // tech
+            newArr[1] = !newArr[1];
+            if (newArr[0]) newArr[0] = 0; // disable food
+            tchooseALL();
+            let newArr2 = new Array(foodc.length).fill(false);
+            setFoodc(newArr2);
         }
-        if (canBeTrue) {
-            let newArr = new Array(techc.length).fill(true);
-            setTechc(newArr);
-            let newArr2 = [...choosed];
-            newArr2[1] = true;
-            setChoosed(newArr2);
-        } else {
-            let newArr = new Array(techc.length).fill(false);
-            setTechc(newArr);
-            let newArr2 = [...choosed];
-            newArr2[1] = false;
-            setChoosed(newArr2);
-        }
+        setChoosed(newArr);
+        setMorejob(true);
     }
 
     const save_filter = () => {
@@ -121,20 +80,24 @@ function FilterPage () {
                                 <div className="title">行業類別</div>
                                 <div className="choices">
                                     {choosed[0]? 
-                                    <div className="ch y" onClick={() => {fchooseALL();}}>
+                                    <div className="ch y">
                                         {choices[0]}
                                         <div className="down-line"></div>
                                     </div> : 
-                                    <div className="ch" onClick={() => {fchooseALL();}}>
+                                    <div className="ch" onClick={() => {
+                                        expand(0);
+                                    }}>
                                         {choices[0]}
                                         <div className="down-line"></div>
                                     </div>}
                                     {choosed[1]? 
-                                    <div className="ch y" onClick={() => {tchooseALL();}}>
+                                    <div className="ch y">
                                         {choices[1]}
                                         <div className="right-line"></div>
                                     </div> : 
-                                    <div className="ch" onClick={() => {tchooseALL();}}>
+                                    <div className="ch" onClick={() => {
+                                        expand(1);
+                                    }}>
                                         {choices[1]}
                                         <div className="right-line"></div>
                                     </div>}
@@ -143,19 +106,23 @@ function FilterPage () {
                             <div className="more food">
                                 {food.map((f, idx) => (
                                     (foodc[idx])?
-                                    <div className="choice f y" onClick={() => {fchoose(idx)}}>{f}</div> :
-                                    <div className="choice f" onClick={() => {fchoose(idx)}}>{f}</div>
+                                    <div className="choice f y">{f}</div> :
+                                    <div className="choice f">{f}</div>
                                 ))}
                             </div>
                             <div className="more tech">
                                 {tech.map((t, idx) => (
                                     (techc[idx]? 
-                                    <div className="choice t y" onClick={() => {tchoose(idx)}}>{t}</div> :
-                                    <div className="choice t" onClick={() => {tchoose(idx)}}>{t}</div>)
+                                    <div className="choice t y">{t}</div> :
+                                    <div className="choice t">{t}</div>)
                                 ))}
                             </div>
                             <div className="cancel" onClick={() => {
                                 setMorejob(false);
+                                let newArr = [...choosed];
+                                newArr[0] = false;
+                                newArr[1] = false;
+                                setChoosed(newArr);
                             }}>V</div>
                         </div>
                     </div>
@@ -163,19 +130,22 @@ function FilterPage () {
                     <div className="allcat">
                         <div className="category job">
                             <div className="title">行業類別</div>
-                            <div className="choices" onClick={() => {
-                                    setMorejob(true);
-                                }}>
+                            <div className="choices">
                                 {choosed[0]? 
                                 <div className="ch y">
                                     {choices[0]}
                                 </div> : 
-                                <div className="ch">{choices[0]}</div>}
+                                <div className="ch" onClick={() => {
+                                    expand(0);
+                                }}>{choices[0]}</div>}
+
                                 {choosed[1]? 
                                 <div className="ch y">
                                     {choices[1]}
                                 </div> : 
-                                <div className="ch">{choices[1]}</div>}
+                                <div className="ch" onClick={() => {
+                                    expand(1);
+                                }}>{choices[1]}</div>}
                             </div>
                         </div>
                         <div className="category wage">
