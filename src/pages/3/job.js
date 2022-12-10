@@ -1,4 +1,4 @@
-import './company.scss';
+import './job.scss';
 import Header from '../global/header';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
@@ -14,6 +14,7 @@ function HomePage () {
     const [salary_type, setSalary_type] = useState("");
     const [map, setMap] = useState("");
     const [intro, setIntro] = useState("");
+    const [text, setText] = useState('');
 
     useEffect(() => {
         setName(joblist[jobID].name);
@@ -22,25 +23,51 @@ function HomePage () {
         setSalary_type(joblist[jobID].salary_type);
         setContent(joblist[jobID].content);
         setRequire(joblist[jobID].require);
-        let compID = joblist[jobID].num;
+        let compID = joblist[jobID].num - 1;
         setMap(companylist[compID].map);
         setIntro(companylist[compID].intro);
+
+        // setText(data.spotData.description.split('\\n').map(
+		// 	(str, id) => {
+		// 		if(id === 0) return <p key={id}>&emsp;&emsp;{str}</p>
+		// 		else return <p key={id}><br/><br/>&emsp;&emsp;{str}</p>
+		// 	}
+		// ));
+
     }, [jobID]);
 
     return (
-        <div className="Home" onClick={() => {window.location.href='/filter'}}>
+        <div className="Home"> 
+        {/* <div className="Home" onClick={() => {window.location.href='/filter'}}> */}
             <Header/>
-            {jobID} {/* 哪個工作 */}
+            {/* {jobID} 哪個工作 */}
             <div className="body">
-                {name}
-                {company}
-                {salary}
-                {content}
-                {require}
-                {salary_type}
-                <Iframe url={map}
-                width="600" height="450"/>
-                {intro}
+                <div className="bg">
+                    <div className='left'>
+                        <div className='name'>{name}</div>
+                        <div className='company'>{company}</div>
+                        <div className='salary'>待遇 {salary}</div>
+                        <div className='content-title'>工作內容</div>
+                        <div className='content-box'>
+                            <div className='content'>{content}</div>
+                        </div>
+                    </div>
+                    <div className='right'>
+                        <div className='require-title'>主要資格條件</div>
+                        <div className='require-box'>
+                            <div className='require'>{require}</div>
+                        </div>
+                        {/* {salary_type} */}
+                        <Iframe className='map' url={map}/>
+                        <div className='info-title-box'>
+                            <div className='info-title'>公司簡介與福利</div>
+                            <div className='welfare' onClick={() => {window.location.href='/company/'+ jobID}}>查看公司福利</div>
+                        </div>
+                        <div className='info-box'>
+                            <div className='info'>{intro}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

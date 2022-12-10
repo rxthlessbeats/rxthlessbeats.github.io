@@ -1,0 +1,154 @@
+.Home {
+    width: 100vw;
+    height: 100vh;
+
+    .body {
+        position: relative;
+        background-color:#1E3458;
+        height: 87.5vh;
+        padding: 4vh 2.5vw 0 2.5vw;
+        /* font-weight: 600; */
+        font-family: 'Inter';
+        font-style: normal;
+
+        .bg {
+            background-color: #e5e5e5;
+            border-radius: 10px;
+            height: 82vh;
+
+            .left {
+                display: inline;
+                float:left;
+                width: 47.5vw;
+
+                .name {
+                    font-weight: 600;
+                    font-size: 50px;
+                    line-height: 12vh;
+                    color: #000000;
+                    margin-left: 2vw;
+                }
+
+                .company {
+                    font-weight: 400;
+                    font-size: 25px;
+                    color: #000000;
+                    margin-left: 2vw;
+                }
+
+                .salary {
+                    font-weight: 400;
+                    font-size: 25px;
+                    color: #c51e1e;
+                    margin-left: 2vw;
+                }
+
+                .content-title {
+                    font-weight: 600;
+                    font-size: 25px;
+                    color: #000000;
+                    margin-left: 4vw;
+                    margin-top: 5vh;
+                    margin-bottom: 1vh;
+                }
+
+                .content-box {
+                    background-color: #D3DDE6;
+                    width: 42vw;
+                    height: 48vh;
+                    border-radius: 20px;
+                    margin-left: 2vw;
+
+                    .content {
+                        overflow: scroll;
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: #000000;
+                        margin-inline: 2vw;
+                        padding-top: 2vh;
+                    }
+                }
+            }
+
+            .right {
+                display: inline-block;
+                width: 45vw;
+                
+                .require-title {
+                    font-weight: 600;
+                    font-size: 25px;
+                    color: #000000;
+                    margin-left: 4vw;
+                    margin-top: 5vh;
+                    margin-bottom: 1vh;
+                }
+
+                .require-box {
+                    background-color: #D3DDE6;
+                    width: 42vw;
+                    height: 20vh;
+                    border-radius: 20px;
+                    margin-left: 2vw;
+
+                    .require {
+                        overflow: scroll;
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: #000000;
+                        margin-inline: 2vw;
+                        padding-top: 2vh;
+                    }
+                }
+
+                .map {
+                    box-sizing: border-box;
+                    width: 42vw;
+                    height: 20vh;
+                    margin-top: 2vh;
+                    margin-bottom: 1vh;
+                    margin-left: 2vw;
+                    border-radius: 20px;
+                    border: 1px solid #A3A3A3;
+                    box-shadow: inset 1px 4px 3px rgba(0, 0, 0, 0.2);
+                }
+
+                .info-title-box {
+                    margin-bottom: 1vh;
+
+                    .info-title {
+                        display: inline;
+                        font-weight: 600;
+                        font-size: 25px;
+                        color: #000000;
+                        margin-left: 4vw;
+                        
+                    }
+
+                    .welfare {
+                        display: inline;
+                        color: #BF7373;
+                        font-weight: 400;
+                        margin-left: 1vw;
+                    }
+                }
+
+                .info-box {
+                    background-color: #D3DDE6;
+                    width: 42vw;
+                    height: 20vh;
+                    border-radius: 20px;
+                    margin-left: 2vw;
+
+                    .info {
+                        overflow: scroll;
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: #000000;
+                        margin-inline: 2vw;
+                        padding-top: 2vh;
+                    }
+                }
+            }
+        }
+    }
+}
