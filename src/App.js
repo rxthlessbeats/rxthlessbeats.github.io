@@ -12,11 +12,11 @@ function App() {
         <BrowserRouter>
         {/* <HashRouter> */}
             <Routes>   
-                <Route exact path="/Job-Searching-Web/" element={<Home/>} />
-                <Route exact path="/Job-Searching-Web/filter" element={<Filter/>} />
-                <Route exact path="/Job-Searching-Web/jobs" element={<Jobs/>}/>
-                <Route exact path="/Job-Searching-Web/job/:jobID" element={<Job/>}/>
-                <Route exact path="/Job-Searching-Web/company/:compID" element={<Company/>}/>   
+                <Route exact path="/" element={<Home/>} />
+                <Route exact path="/filter" element={<Filter/>} />
+                <Route exact path="/jobs" element={<Jobs/>}/>
+                <Route exact path="/job/:jobID" element={<Job/>}/>
+                <Route exact path="/company/:compID" element={<Company/>}/>   
             </Routes>
         {/* </HashRouter> */}
         </BrowserRouter>

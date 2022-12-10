@@ -2,6 +2,7 @@ import './company.scss';
 import Header from '../global/header';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import Iframe from 'react-iframe';
 
 function HomePage () {
     const {jobID} = useParams();
@@ -24,7 +25,7 @@ function HomePage () {
         let compID = joblist[jobID].num;
         setMap(companylist[compID].map);
         setIntro(companylist[compID].intro);
-    }, []);
+    }, [jobID]);
 
     return (
         <div className="Home" onClick={() => {window.location.href='/filter'}}>
@@ -37,7 +38,8 @@ function HomePage () {
                 {content}
                 {require}
                 {salary_type}
-                {map}
+                <Iframe url={map}
+                width="600" height="450"/>
                 {intro}
             </div>
         </div>
