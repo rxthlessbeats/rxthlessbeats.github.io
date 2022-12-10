@@ -25,16 +25,38 @@ function JobsPage () {
     useEffect(() => {
         let newArr = [];
         var i;
-        for (i=0; i<choosed.length; i++) {
+
+        let allFood = true;
+        for (i=0; i<foodc.length; i++) {
+            if (!foodc[i]) {
+                allFood = false;
+                break;
+            }
+        }
+        if (allFood) newArr.push(choices[0]);
+
+        let allTech = true;
+        for(i=0; i<techc.length; i++) {
+            if (!techc[i]) {
+                allTech = false;
+                break;
+            }
+        }
+        if (allTech) newArr.push(choices[1]);
+
+        for (i=2; i<choosed.length; i++) {
             if (choosed[i]) newArr.push(choices[i]);
         }
-        for (i=0; i<foodc.length; i++) {
-            if (foodc[i]) newArr.push(food[i]);
+        if (!allFood) {
+            for (i=0; i<foodc.length; i++) {
+                if (foodc[i]) newArr.push(food[i]);
+            }
         }
-        for(i=0; i<techc.length; i++) {
-            if (techc[i]) newArr.push(tech[i]);
+        if (!allTech) {
+            for(i=0; i<techc.length; i++) {
+                if (techc[i]) newArr.push(tech[i]);
+            }
         }
-        // // console.log("?")
         setFilter(newArr);
     }, [setFilter, choosed, foodc, techc]);
     // }, []);
