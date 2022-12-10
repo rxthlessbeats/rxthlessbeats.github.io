@@ -13,12 +13,13 @@ function JobsPage () {
     const [techc, setTechc] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 
         false, false, false, false, false, false]);
     const [filter, setFilter] = useState([]);
-    const [save, setSave] = useState([false, true, true, false, true])
+    const [save, setSave] = useState([])
 
     useEffect(() => {
         if (localStorage.getItem("choosed")) setChoosed(JSON.parse(localStorage.getItem("choosed")));
         if (localStorage.getItem("foodc")) setFoodc(JSON.parse(localStorage.getItem("foodc")));
         if (localStorage.getItem("techc")) setTechc(JSON.parse(localStorage.getItem("techc")));
+        setSave(new Array(joblist.length).fill(false));
     }, []);
 
     useEffect(() => {
@@ -45,6 +46,10 @@ function JobsPage () {
         setFilter(newArr);
         // only set local storage when go to other pages
     };
+
+    // const savejob = (idx) => {
+
+    // }
 
     return (
         <div className="Jobs">
