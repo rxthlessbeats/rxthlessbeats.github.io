@@ -1,5 +1,5 @@
 import './filter.scss';
-import './header.scss';
+import Header from './global/header';
 import { useState, useEffect } from 'react';
 const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
 const food = ["儲備幹部", "銷售", "內場", "外場", "人資"];
@@ -70,10 +70,7 @@ function FilterPage () {
 
     return (
         <div className="Filter">
-            <div className="header">
-                <img src={require("../images/職人交響曲.png")} alt="職人交響曲"></img>
-                <div className="title">2022 新竹地區科技業無紙化徵才活動</div>
-            </div>
+            <Header/>
             <div className="body">
                 <div className="bodyheader">工作篩選</div>
                 {morejob === true?

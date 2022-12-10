@@ -1,14 +1,9 @@
 import './home.scss';
-import './header.scss';
+import Header from './global/header';
 function HomePage () {
     return (
         <div className="Home" onClick={() => {window.location.href='/filter'}}>
-            <div className="header">
-                <img src={require("../images/職人交響曲.png")} alt="職人交響曲"></img>
-                <div className="title">
-                    2022 新竹地區科技業無紙化徵才活動
-                </div>
-            </div>
+            <Header/>
             <div className="content">
                 <img className="pic" src={require("../images/勞工處網站封面.png")} alt="勞工處網站封面"></img>
             </div>
