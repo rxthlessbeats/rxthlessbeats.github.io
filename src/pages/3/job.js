@@ -23,7 +23,7 @@ function HomePage () {
         setSalary_type(joblist[jobID].salary_type);
         setContent(joblist[jobID].content);
         setRequire(joblist[jobID].require);
-        let compID = joblist[jobID].num - 1;
+        let compID = joblist[jobID].num-1;
         setMap(companylist[compID].map);
         setIntro(companylist[compID].intro);
 
