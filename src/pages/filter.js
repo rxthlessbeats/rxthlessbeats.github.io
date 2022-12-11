@@ -1,6 +1,9 @@
 import './filter.scss';
 import Header from './global/header';
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+
 const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
 const food = ["儲備幹部", "銷售", "內場", "外場", "人資"];
 const tech = ["軟體工程師","研發工程師","研發技術員","製成工程師","殷備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
@@ -156,7 +159,7 @@ function FilterPage () {
                             </div>
                             <div className="cancel" onClick={() => {
                                 setMorejob(false);
-                            }}>V</div>
+                            }}><FontAwesomeIcon icon={faCheck}/></div>
                         </div>
                     </div>
                     :

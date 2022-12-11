@@ -1,0 +1,36 @@
+.location {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    .bg-color {
+        position: relative;
+        background-color: #1E3458;
+        height: 87.5vh;
+        padding: 2.5vh 2.5vw 0 2.5vw;
+        font-family: 'Inter';
+        font-style: normal;
+
+        .map {
+            display: inline-block;
+
+            .map-title {
+                
+                .map-title1 {
+                    display: inline-block;
+                    color: #fff;
+                }
+
+                .map-title2 {
+                    display: inline-block;
+                    color: #fff;
+                }
+            }
+        }
+
+        .save-all {
+            display: inline-block;
+
+        }
+    }
+}
