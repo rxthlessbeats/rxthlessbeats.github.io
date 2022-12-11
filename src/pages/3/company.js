@@ -2,6 +2,7 @@ import './company.scss';
 import Header from '../global/header';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function CompanyPage () {
     const {compID} = useParams();
@@ -11,7 +12,7 @@ function CompanyPage () {
     const [welfare, setWelfare] = useState("");
 
     useEffect(() => {
-        setCompany(companylist[compID].company);
+        setCompany(companylist[compID].name);
         setContact(companylist[compID].contact);
         setIntro(companylist[compID].intro);
         setWelfare(companylist[compID].welfare);
@@ -25,6 +26,11 @@ function CompanyPage () {
                 <div className='company'>{company}</div>    
                 <div className='bg'>
                     <div className='left'>
+                        <div className='back' onClick={() => {
+                            window.history.back()
+                            }}><FontAwesomeIcon icon="fa-arrow-left" className='arrow'/>
+                            返回職位資訊
+                        </div>
                         <div className='contact-title'>聯絡人</div>
                         <div className='contact-box'>
                             <div className='contact'>{contact}</div>
@@ -34,11 +40,11 @@ function CompanyPage () {
                             <div className='info'>{intro}</div>
                         </div>
                     </div>
-                </div>
-                <div className='right'>
-                    <div className='welfare-title'>福利制度</div>
-                    <div className='welfare-box'>
-                        <div className='welfare'>{welfare}</div>
+                    <div className='right'>
+                        <div className='welfare-title'>福利制度</div>
+                        <div className='welfare-box'>
+                            <div className='welfare'>{welfare}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,7 +56,7 @@ const companylist = [
     {name: '佳能半導體設備股份有限公司',
     contact: '聯絡人：張先生\n連絡電話：0919972389\nEmail：Chang.chengho@canon-se.com.tw',
     intro: '佳能半導體設備股份有限公司自成立至今已逾二十五年以上，提供半導體製造設備、FPD 製造設備、真空設備等, 提供客戶產能的提升與技術革新。並以提供具有高度專業知識與附加價值的服務為主要使命。',
-    welfare: '"1.年中及年終獎金\n2.完善國內外培訓制度\n3.享有公司團體意外、醫療保險\n4.每年提供優於法規之定期身體健康檢查\n5.優於勞基法的特別休假制度\n6.依實際工作內容給予交通津貼、晚班津貼、值班津貼\n7.優於勞基法的加班計算倍率\n8.定期舉辦員工家庭活動\n9.提供語言學習補助金及語言考試合格祝賀金\n10.提供其他學習學費補助金\n11.其他如提案獎金、久任獎金等\n12.提供免費之內部日語課程\n13.定期舉辦聚餐及戶外活動\n14.舉辦年終尾牙等活動"'},
+    welfare: '1.年中及年終獎金\n2.完善國內外培訓制度\n3.享有公司團體意外、醫療保險\n4.每年提供優於法規之定期身體健康檢查\n5.優於勞基法的特別休假制度\n6.依實際工作內容給予交通津貼、晚班津貼、值班津貼\n7.優於勞基法的加班計算倍率\n8.定期舉辦員工家庭活動\n9.提供語言學習補助金及語言考試合格祝賀金\n10.提供其他學習學費補助金\n11.其他如提案獎金、久任獎金等\n12.提供免費之內部日語課程\n13.定期舉辦聚餐及戶外活動\n14.舉辦年終尾牙等活動'},
     {name: '昇陽國際半導體股份有限公司',
     contact: '聯絡人：龔小姐\n連絡電話：03-5641888 分機5906\nEmail：kungyu@psi.com.tw"\n\n\n',
     intro: '昇陽國際半導體成立於 1997 年，以晶圓再生起家，進而發展晶圓薄化及微機電代工製程。以技術 創新與品質優先為目標，創造多樣性產品組合，提供客戶更具競爭力的全方位服務。昇陽半導體全球首座智慧化晶圓再生工廠，2022 年在台中港科技產業園區擴廠，將是全球第一座自動化及智慧化晶圓再生工廠，以綠色智能用電、建置水資源再利用及廢水廢液回收系統，將 ESG 思維融入企業營運。主要服務項目：1. 8吋及12吋測試晶圓及晶圓再生之製造 2. 6 吋及 8 吋產品晶圓薄化技術。',

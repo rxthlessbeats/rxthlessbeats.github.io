@@ -6,13 +6,139 @@
         position: relative;
         background-color:#1E3458;
         height: 87.5vh;
-        // padding: 4vh 2.5vw 0 2.5vw;
+        padding: 2.5vh 2.5vw 0 2.5vw;
+        font-family: 'Inter';
+        font-style: normal;
         /* font-weight: 600; */
 
         .company{
             font-weight: 400;
             font-size: 40px;
             color: #FFFFFF;
+            margin-bottom: 1vh;
+        }
+
+        .bg {
+            background-color: #e5e5e5;
+            border-radius: 10px;
+            height: 75vh;
+
+            .left {
+                display: inline;
+                float: left;
+                width: 47.5vw;
+
+                .back {
+                    font-weight: 600;
+                    color: #6B6A6A;
+                    font-size: 25px;
+                    margin-top: 2vh;
+                    margin-left: 2vw;
+
+                    .arrow {
+                        margin-right: 1vw;
+                    }
+                }
+
+                .contact-title {
+                    font-weight: 600;
+                    font-size: 25px;
+                    color: #000000;
+                    margin-left: 4vw;
+                    margin-top: 2vh;
+                    margin-bottom: 1vh;
+                }
+
+                .contact-box {
+                    background-color: #D3DDE6;
+                    width: 42vw;
+                    height: 15vh;
+                    border-radius: 20px;
+                    margin-left: 2vw;
+
+                    .contact {
+                        overflow: scroll;
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: #000000;
+                        margin-inline: 2vw;
+                        padding-top: 2vh;
+                        height: 11vh;
+                    }
+
+                    .contact::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+
+                .info-title {
+                    font-weight: 600;
+                    font-size: 25px;
+                    color: #000000;
+                    margin-left: 4vw;
+                    margin-top: 2vh;
+                    margin-bottom: 1vh;
+                }
+
+                .info-box {
+                    background-color: #D3DDE6;
+                    width: 42vw;
+                    height: 35vh;
+                    border-radius: 20px;
+                    margin-left: 2vw;
+
+                    .info {
+                        overflow: scroll;
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: #000000;
+                        margin-inline: 2vw;
+                        padding-top: 2vh;
+                        height: 31vh;
+                    }
+
+                    .welfare::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+
+            .right {
+                display: inline;
+                float: right;
+                width: 47.5vw;
+
+                .welfare-title {
+                    font-weight: 600;
+                    font-size: 25px;
+                    color: #000000;
+                    margin-left: 4vw;
+                    margin-top: 5vh;
+                    margin-bottom: 1vh;
+                }
+
+                .welfare-box {
+                    background-color: #D3DDE6;
+                    width: 43.5vw;
+                    height: 61vh;
+                    border-radius: 20px;
+                    margin-left: 2vw;
+
+                    .welfare {
+                        overflow: scroll;
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: #000000;
+                        margin-inline: 2vw;
+                        padding-top: 2vh;
+                        height: 57vh;
+                    }
+
+                    .welfare::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
         }
     }
 }
