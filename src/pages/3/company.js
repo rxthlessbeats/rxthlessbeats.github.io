@@ -2,6 +2,7 @@ import './company.scss';
 import Header from '../global/header';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function CompanyPage () {
     const {compID} = useParams();
@@ -25,7 +26,11 @@ function CompanyPage () {
                 <div className='company'>{company}</div>    
                 <div className='bg'>
                     <div className='left'>
-                        <div className='back' onClick={() => {window.history.back()}}>←返回職位資訊</div>
+                        <div className='back' onClick={() => {
+                            window.history.back()
+                            }}><FontAwesomeIcon icon="fa-arrow-left" className='arrow'/>
+                            返回職位資訊
+                        </div>
                         <div className='contact-title'>聯絡人</div>
                         <div className='contact-box'>
                             <div className='contact'>{contact}</div>

@@ -29,11 +29,15 @@
                 width: 47.5vw;
 
                 .back {
-                    font-weight: 400;
+                    font-weight: 600;
                     color: #6B6A6A;
                     font-size: 25px;
                     margin-top: 2vh;
                     margin-left: 2vw;
+
+                    .arrow {
+                        margin-right: 1vw;
+                    }
                 }
 
                 .contact-title {
@@ -59,6 +63,7 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                        height: 11vh;
                     }
 
                     .contact::-webkit-scrollbar {
@@ -89,6 +94,7 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                        height: 31vh;
                     }
 
                     .welfare::-webkit-scrollbar {
@@ -125,6 +131,7 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                        height: 57vh;
                     }
 
                     .welfare::-webkit-scrollbar {

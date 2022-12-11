@@ -66,6 +66,7 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                        height: 44vh;
                     }
                     .content::-webkit-scrollbar {
                         display: none;
@@ -100,6 +101,7 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                        height: 16vh;
                     }
                     .require::-webkit-scrollbar {
                         display: none;
@@ -152,12 +154,28 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                        height: 16vh;
                     }
                     .info::-webkit-scrollbar {
                         display: none;
                     }
                 }
             }
+        }
+
+        .cancel {
+            background-color: #a7a7a7;
+            border-radius: 50%;
+            width: 8vh;
+            height: 8vh;
+            position: absolute;
+            line-height: 8vh;
+            text-align: center;
+            top: 1.5vh;
+            right: 1vw;
+
+            font-size: 6vh;
+            color: #e4e4e4;
         }
     }
 }

@@ -3,6 +3,8 @@ import Header from '../global/header';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Iframe from 'react-iframe';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function JobPage () {
     const {jobID} = useParams();
@@ -67,6 +69,10 @@ function JobPage () {
                             <div className='info'>{intro}</div>
                         </div>
                     </div>
+                </div>
+                <div className='cancel' onClick={() => {
+                    window.location.href.back()
+                    }}><FontAwesomeIcon icon={faXmark}/>
                 </div>
             </div>
         </div>
