@@ -5,6 +5,8 @@
   "homepage": "https://rxthlessbeats.github.io",
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/react-fontawesome": "github:fortawesome/react-fontawesome",
     "@testing-library/jest-dom": "^5.16.5",

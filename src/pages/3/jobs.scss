@@ -1,17 +1,22 @@
 .Jobs {
     width: 100vw;
     height: 100vh;
-
-    .body {
+    // overflow: hidden;
+    .filter_and_job {
+        display: inline-block;
         position: relative;
         background-color:#1E3458;
         height: 87.5vh;
-        padding: 2.5vh 2.5vw 0 2.5vw;
+        width: 45vw;
+        padding: 2.5vh 1vw 0 2vw;
         /* font-weight: 600; */
         .back {
             color: #FFFFFF;
             margin-bottom: 3vh;
-            font-size: 20px;
+            font-size: 22px;
+            .arrow {
+                margin-right: 1vw;
+            }
         }
         .filters {
             background-color: rgba(218, 201, 179, 0.38);
@@ -23,7 +28,7 @@
             overflow: scroll;
             white-space: nowrap;
             color: #7E7E7E;
-            font-size: 20px;
+            font-size: 22px;
             .f { 
                 margin: 1vh 0.5vw;
                 padding: 0 1vw;
@@ -40,64 +45,111 @@
         .filters::-webkit-scrollbar {
             display: none;
         }
-        .jobs {
-            overflow-y: scroll;
-            width: 45vw;
-            height: 73.5vh;
-            // background-color: #FFE194;
-            .j {
-                background-color: #FFFFFF;
-                margin: 2vh 0 ;
-                padding: 2vh 1vw;
-                border-radius: 15px;
-                font-size: 22px;
-                color: #454545;
+    }
+    .save_all {
+        display: inline-block;
+        vertical-align: top;
+        height: 87.5vh;
+        width: 49vw;
+        padding: 2.5vh 2vw 0 1vw;
+        background-color:#1E3458;
+        .save_block {
+            height: 83vh;
+            border-radius: 20px;
+            background-color: #D3DDE6;
+            padding: 1vh 2vw;
+            // margin: 5vh 1.5vw 5vh 2.5vw;
+            .save_header {
+                font-size: 26px;
                 position: relative;
-                .jc {
-                    display: block;
-                    width: 100%;
+                height: 8vh;
+                .save {
+                    margin: 1vh 1vw 0 0;
                 }
-                .name {
-                    color: #0B0B0B;
-                    font-size: 32px;
-                    // background-color: aqua;
-                    display: inline-block;
-                    // margin-right: 3vw;
+                .current {
+                    position: absolute;
+                    left: 3vw;
+                    line-height: 8vh;
+                    top: 0;
                 }
-                .req {
-                    float: right;
-                    margin-right: 10%;
-                    // position: absolute;
-                    // left: 48%;
-                    color: #454545;
+                .view_all {
+                    position: absolute;
+                    right: 0;
+                    top: 1vh;
+                    line-height: 4vh;
+                    background-color: #DAC9B3;
+                    color: #6A6A6A;
+                    padding: 1vh 2vw;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    // display: inline-block;
+                    // float: right;
+                    vertical-align: baseline;
                 }
-                .num {
-                    color: #DA8787;
-                    display: inline-block;
-                    margin-right: 1%;
-                }
-                .comp {
-                    display: inline-block;
-                }
-                .pla {
-                    display: inline-block;
-                }
-                .sal {
-                    float: right;
-                    margin-right: 10%;
-                    color: #B30000;
-                }
-                // .save {
-                //     position: absolute;
-                //     right: 0;
-                //     top: 0;
-                //     border: solid 1px #636363;
-                // }
-                // .y {background-color: #FFE194;}
             }
         }
-        .jobs::-webkit-scrollbar {
-            display: none;
+    }
+    .jobs {
+        overflow-y: scroll;
+        width: 45vw;
+        height: 69.5vh;
+        margin-top: 2vh;
+        // background-color: #FFE194;
+        .j {
+            background-color: #FFFFFF;
+            margin-bottom: 2vh ;
+            padding: 2vh 1vw;
+            border-radius: 15px;
+            font-size: 22px;
+            color: #454545;
+            position: relative;
+            .jc {
+                display: block;
+                width: 100%;
+            }
+            .name {
+                color: #0B0B0B;
+                font-size: 32px;
+                // background-color: aqua;
+                display: inline-block;
+                // margin-right: 3vw;
+            }
+            .req {
+                float: right;
+                margin-right: 10%;
+                // position: absolute;
+                // left: 48%;
+                color: #454545;
+            }
+            .num {
+                color: #DA8787;
+                display: inline-block;
+                margin-right: 1%;
+            }
+            .comp {
+                display: inline-block;
+            }
+            .pla {
+                display: inline-block;
+            }
+            .sal {
+                float: right;
+                margin-right: 10%;
+                color: #B30000;
+            }
+            .save {
+                position: absolute;
+                right: 1vw;
+                top: 30%;
+                line-height: 50%;
+            }
         }
     }
+    .jobs::-webkit-scrollbar {
+        display: none;
+    }
+    .save {
+        font-size: 50px;
+    }
+    .y {color: #FFE194;}
 }
+
