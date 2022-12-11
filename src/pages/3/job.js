@@ -71,7 +71,7 @@ function JobPage () {
                     </div>
                 </div>
                 <div className='cancel' onClick={() => {
-                    window.location.href.back()
+                    window.history.back()
                     }}><FontAwesomeIcon icon={faXmark}/>
                 </div>
             </div>
