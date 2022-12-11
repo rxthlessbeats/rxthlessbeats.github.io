@@ -24,19 +24,26 @@ function JobPage () {
         setCompany(joblist[jobID].company);
         setSalary(joblist[jobID].salary);
         setSalary_type(joblist[jobID].salary_type);
-        setContent(joblist[jobID].content);
-        setRequire(joblist[jobID].require);
         let compID = joblist[jobID].num - 1;
         setMap(companylist[compID].map);
-        setIntro(companylist[compID].intro);
+        // setIntro(companylist[compID].intro);
         setCompID(joblist[jobID].num - 1);
 
-        // setText(data.spotData.description.split('\\n').map(
-		// 	(str, id) => {
-		// 		if(id === 0) return <p key={id}>&emsp;&emsp;{str}</p>
-		// 		else return <p key={id}><br/><br/>&emsp;&emsp;{str}</p>
-		// 	}
-		// ));
+        setContent(joblist[jobID].content.split('\n').map(
+			(str) => {
+				return <>{str}<br></br></>
+			}
+		));
+        setIntro(companylist[compID].intro.split('\n').map(
+			(str) => {
+				return <>{str}<br></br></>
+			}
+		));
+        setRequire(joblist[jobID].require.split('\n').map(
+            (str) => {
+                return <>{str}<br></br></>
+            }
+        ))
 
     }, [jobID]);
 

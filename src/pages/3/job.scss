@@ -6,27 +6,31 @@
         position: relative;
         background-color:#1E3458;
         height: 87.5vh;
-        padding: 4vh 2.5vw 0 2.5vw;
+        padding: 2.5vh 2.5vw 0 2.5vw;
         /* font-weight: 600; */
         font-family: 'Inter';
         font-style: normal;
 
         .bg {
+            margin-top: 1vh;
             background-color: #e5e5e5;
             border-radius: 10px;
             height: 82vh;
 
             .left {
-                display: inline;
+                display: inline-flex;
                 float:left;
                 width: 47.5vw;
+                height: 82vh;
+                flex-direction: column;
 
                 .name {
                     font-weight: 600;
                     font-size: 50px;
-                    line-height: 12vh;
+                    line-height: 55px;
                     color: #000000;
                     margin-left: 2vw;
+                    margin-block: 2vh;
                 }
 
                 .company {
@@ -53,11 +57,13 @@
                 }
 
                 .content-box {
+                    flex-grow: 1;
                     background-color: #D3DDE6;
                     width: 42vw;
-                    height: 48vh;
+                    height: auto;
                     border-radius: 20px;
                     margin-left: 2vw;
+                    margin-bottom: 3vh;
 
                     .content {
                         overflow: scroll;
@@ -66,7 +72,7 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
-                        height: 44vh;
+                        height: calc(100% - 4vh);
                     }
                     .content::-webkit-scrollbar {
                         display: none;
