@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import Home from './pages/home';
 import Filter from './pages/filter';
@@ -10,7 +10,6 @@ import Company from './pages/3/company';
 function App() {
     return (
         <BrowserRouter>
-        {/* <HashRouter> */}
             <Routes>   
                 <Route exact path="/" element={<Home/>} />
                 <Route exact path="/filter" element={<Filter/>} />
@@ -18,7 +17,6 @@ function App() {
                 <Route exact path="/job/:jobID" element={<Job/>}/>
                 <Route exact path="/company/:compID" element={<Company/>}/>   
             </Routes>
-        {/* </HashRouter> */}
         </BrowserRouter>
     );
 }
