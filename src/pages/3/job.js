@@ -1,10 +1,10 @@
-import './company.scss';
+import './job.scss';
 import Header from '../global/header';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Iframe from 'react-iframe';
 
-function HomePage () {
+function JobPage () {
     const {jobID} = useParams();
     const [name, setName] = useState("");
     const [company, setCompany] = useState("");
@@ -14,6 +14,7 @@ function HomePage () {
     const [salary_type, setSalary_type] = useState("");
     const [map, setMap] = useState("");
     const [intro, setIntro] = useState("");
+    // const [text, setText] = useState('');
 
     useEffect(() => {
         setName(joblist[jobID].name);
@@ -22,25 +23,49 @@ function HomePage () {
         setSalary_type(joblist[jobID].salary_type);
         setContent(joblist[jobID].content);
         setRequire(joblist[jobID].require);
-        let compID = joblist[jobID].num-1;
+        let compID = joblist[jobID].num - 1;
         setMap(companylist[compID].map);
         setIntro(companylist[compID].intro);
+
+        // setText(data.spotData.description.split('\\n').map(
+		// 	(str, id) => {
+		// 		if(id === 0) return <p key={id}>&emsp;&emsp;{str}</p>
+		// 		else return <p key={id}><br/><br/>&emsp;&emsp;{str}</p>
+		// 	}
+		// ));
+
     }, [jobID]);
 
     return (
-        <div className="Home" onClick={() => {window.location.href='/filter'}}>
+        <div className="jobPage"> 
             <Header/>
-            {jobID} {/* 哪個工作 */}
             <div className="body">
-                {name}
-                {company}
-                {salary}
-                {content}
-                {require}
-                {salary_type}
-                <Iframe url={map}
-                width="600" height="450"/>
-                {intro}
+                <div className="bg">
+                    <div className='left'>
+                        <div className='name'>{name}</div>
+                        <div className='company'>{company}</div>
+                        <div className='salary'>待遇 {salary_type==="月薪"? "月薪":""}{salary}</div>
+                        <div className='content-title'>工作內容</div>
+                        <div className='content-box'>
+                            <div className='content'>{content}</div>
+                        </div>
+                    </div>
+                    <div className='right'>
+                        <div className='require-title'>主要資格條件</div>
+                        <div className='require-box'>
+                            <div className='require'>{require}</div>
+                        </div>
+                        {/* {salary_type} */}
+                        <Iframe className='map' url={map}/>
+                        <div className='info-title-box'>
+                            <div className='info-title'>公司簡介與福利</div>
+                            <div className='welfare' onClick={() => {window.location.href='/company/'+ jobID}}>查看公司福利</div>
+                        </div>
+                        <div className='info-box'>
+                            <div className='info'>{intro}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -829,4 +854,4 @@ const companylist = [
     intro: '錢都 涮涮鍋，伴顧客走過 20 幾個年頭\n目前全省錢都於全台鍋類餐飲市占率超過一半，老字號以新鮮多元且高 CP 值的大眾火鍋著稱，是台灣小火鍋最具代表性的品牌。\n品牌願景：創造完美顧客體驗\n品牌使命：以親手調製的柴魚昆布大骨高湯、嚴選把關的新鮮食材、堅持守護品質的決心-讓顧客可以安心、放心。以選擇多樣的豐富餐點-滿足顧客多元的需求。\n主要服務項目:日式小火鍋'},
 ];
 
-export default HomePage;
+export default JobPage;
