@@ -171,11 +171,30 @@ function JobsPage () {
         let c = filter.slice(0, 10);
         let f = filter.slice(10, 15);
         let t = filter.slice(15, filter.length);
+        if (c[0] && c[1]) {
+            c[0] = c[1] = false;
+            f.fill(false);
+            t.fill(false);
+        }  else {
+            if (!c[0]) {
+                for (var i=0; i<f.length; i++) {
+                    if (f[i]) c[0] = true;
+                }
+            }
+            if (!c[1]) {
+                for (i=0; i<t.length; i++) {
+                    if (t[i]) c[1] = true;
+                }
+            }
+        }
+
+        if (c[2] && c[3]) c[2] = c[3] = false;
+        if (c[4] && c[5] && c[6] && c[7] && c[8] && c[9]) c[4] = c[5] = c[6] = c[7] = c[8] = c[9] = false;
         localStorage.setItem("choosed", JSON.stringify(c));
         localStorage.setItem("foodc", JSON.stringify(f));
         localStorage.setItem("techc", JSON.stringify(t));
         let newArr = [];
-        for (var i=0; i<save.length; i++) {
+        for (i=0; i<save.length; i++) {
             if (save[i]) newArr.push(i);
         }
         localStorage.setItem("save", JSON.stringify(newArr));
@@ -379,13 +398,13 @@ const joblist = [
     company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '35000以上',
     job_type: '製程設備工程師', place_type: '新竹', salary_type: '月薪'},
     {name: 'MIS 網路管理工程師', edu: '高中以上畢業', num: 5,
-    company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: ' 30000以上',
+    company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '30000以上',
     job_type: '網路管理工程師', place_type: '新竹', salary_type: '月薪'},
     {name: '電控配線工程師', edu: '高中以上畢業', num: 5,
     company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '35000以上',
     job_type: '電控配線工程師', place_type: '新竹', salary_type: '月薪'},
     {name: 'QA 人員', edu: '高中以上畢業', num: 5,
-    company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: ' 30000以上',
+    company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '30000以上',
     job_type: 'QA 人員', place_type: '新竹', salary_type: '月薪'},
     {name: '生產技術員', edu: '不拘', num: 6,
     company: '昱嘉科技股份有限公司', place: '新竹地區', salary: '25250~35000',
@@ -484,7 +503,7 @@ const joblist = [
     company: '華夏玻璃股份有限公司', place: '新竹地區', salary: '28000 以上',
     job_type: '儲備幹部', place_type: '新竹', salary_type: '月薪'},
     {name: '產線技術員', edu: '不拘', num: 11,
-    company: '晶成半導體股份有限公司', place: '新竹地區', salary: ' 33300 以上',
+    company: '晶成半導體股份有限公司', place: '新竹地區', salary: '33300 以上',
     job_type: '技術員', place_type: '新竹', salary_type: '月薪'},
     {name: '產線助理', edu: '不拘', num: 11,
     company: '晶成半導體股份有限公司', place: '新竹地區', salary: '27300 以上',
@@ -607,7 +626,7 @@ const joblist = [
     company: '勵威電子股份有限公司', place: '新竹地區', salary: '30000~42000',
     job_type: '工程師', place_type: '新竹', salary_type: '月薪'},
     {name: 'FAE 應用工程師(客服)', edu: '不拘', num: 13,
-    company: '勵威電子股份有限公司', place: '新竹地區', salary: ' 40000以上',
+    company: '勵威電子股份有限公司', place: '新竹地區', salary: '40000以上',
     job_type: '工程師', place_type: '新竹', salary_type: '月薪'},
     {name: '機電助理工程師', edu: '不拘', num: 14,
     company: '震江電力科技股份有限公司', place: '新竹地區/台南市', salary: '31000以上',
@@ -619,7 +638,7 @@ const joblist = [
     company: '震江電力科技股份有限公司', place: '新竹地區', salary: '27800~29400',
     job_type: '實習生', place_type: '新竹', salary_type: '月薪'},
     {name: '監工助理工程師', edu: '不拘', num: 14,
-    company: '震江電力科技股份有限公司', place: '新竹地區', salary: ' 30000~37000',
+    company: '震江電力科技股份有限公司', place: '新竹地區', salary: '30000~37000',
     job_type: '助理工程師', place_type: '新竹', salary_type: '月薪'},
     {name: '市場行銷專員', edu: '大學以上畢業', num: 14,
     company: '震江電力科技股份有限公司', place: '新竹地區', salary: '面議',
@@ -730,25 +749,25 @@ const joblist = [
     company: '小蒙牛股份有限公司', place: '新竹地區', salary: '時薪168~210',
     job_type: '外場', place_type: '新竹', salary_type: '時薪'},
     {name: '業務司機', edu: '不拘', num: 24,
-    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: ' 30000以上',
+    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '30000以上',
     job_type: '司機', place_type: '新竹', salary_type: '月薪'},
     {name: '商務通路開發專案主任(新竹駐區)', edu: '不拘', num: 24,
-    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: ' 32000以上',
+    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '32000以上',
     job_type: '市場開發', place_type: '新竹', salary_type: '月薪'},
     {name: '庫務專員', edu: '不拘', num: 24,
     company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '27000~33000',
     job_type: '庫務專員', place_type: '新竹', salary_type: '月薪'},
     {name: '引貨業務專員', edu: '不拘', num: 24,
-    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: ' 30000以上',
+    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '30000以上',
     job_type: '業務', place_type: '新竹', salary_type: '月薪'},
     {name: '人資管理師', edu: '大學以上畢業', num: 24,
-    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: ' 33000~36000',
+    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: '33000~36000',
     job_type: '人資', place_type: '桃園', salary_type: '月薪'},
     {name: '品管人員', edu: '高中以上畢業', num: 24,
     company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: '30000~35000',
     job_type: '品管', place_type: '桃園', salary_type: '月薪'},
     {name: '設備維修工程師', edu: '不拘', num: 24,
-    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: ' 38000以上',
+    company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: '38000以上',
     job_type: '工程師', place_type: '桃園', salary_type: '月薪'},
     {name: '儲備幹部', edu: '不拘', num: 25,
     company: '樂檸鮮事股份有限公司', place: '新竹地區', salary: '34000',
