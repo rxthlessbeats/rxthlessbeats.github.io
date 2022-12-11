@@ -60,37 +60,40 @@
                 .name {
                     color: #0B0B0B;
                     font-size: 32px;
-                    margin-right: 3vw;
-                    float: left;
+                    // background-color: aqua;
+                    display: inline-block;
+                    // margin-right: 3vw;
                 }
                 .req {
-                    // float: right;
-                    position: absolute;
-                    left: 48%;
+                    float: right;
+                    margin-right: 10%;
+                    // position: absolute;
+                    // left: 48%;
                     color: #454545;
                 }
                 .num {
                     color: #DA8787;
+                    display: inline-block;
+                    margin-right: 1%;
+                }
+                .comp {
+                    display: inline-block;
                 }
                 .pla {
-                    display: inline;
+                    display: inline-block;
                 }
                 .sal {
-                    display: inline;
-                    position: absolute;
-                    right: 15%;
+                    float: right;
+                    margin-right: 10%;
                     color: #B30000;
-                    font-family: 'Inter';
-                    font-style: normal;
-                    font-weight: 400;
                 }
-                .save {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    border: solid 1px #636363;
-                }
-                .y {background-color: #FFE194;}
+                // .save {
+                //     position: absolute;
+                //     right: 0;
+                //     top: 0;
+                //     border: solid 1px #636363;
+                // }
+                // .y {background-color: #FFE194;}
             }
         }
         .jobs::-webkit-scrollbar {

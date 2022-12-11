@@ -3,7 +3,7 @@ import Header from '../global/header';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
-function HomePage () {
+function CompanyPage () {
     const {compID} = useParams();
     const [company, setCompany] = useState("");
     const [contact, setContact] = useState("");
@@ -17,8 +17,8 @@ function HomePage () {
         setWelfare(companylist[compID].welfare);
     }, [compID]);
     return (
-        <div className="Home">
-        {/* <div className="Home" onClick={() => {window.location.href='/filter'}}> */}
+        <div className="companyPage">
+        {/* <div className="Company" onClick={() => {window.location.href='/filter'}}> */}
             <Header/>
             {/* {compID} 哪間公司 */}
             <div className="body">
@@ -167,4 +167,4 @@ const companylist = [
     intro: '錢都 涮涮鍋，伴顧客走過 20 幾個年頭\n目前全省錢都於全台鍋類餐飲市占率超過一半，老字號以新鮮多元且高 CP 值的大眾火鍋著稱，是台灣小火鍋最具代表性的品牌。\n品牌願景：創造完美顧客體驗\n品牌使命：以親手調製的柴魚昆布大骨高湯、嚴選把關的新鮮食材、堅持守護品質的決心-讓顧客可以安心、放心。以選擇多樣的豐富餐點-滿足顧客多元的需求。\n主要服務項目:日式小火鍋',
     welfare: '★錢都夥伴專屬福利★\r\n1. 員工年度旅遊\r\n2.結喪禮金、喪病慰問金、生育禮金\r\n3.員工用餐整桌優惠\r\n4.上班日免費供餐*\r\n5.健康檢查補助\r\n6.免費制服(門市)\r\n7.不定期聚餐活動\r\n8.春酒或尾牙活動\r\n★獎金★\r\n1.業績達標(每月績效獎金)*\r\n2.優秀同仁介紹/推薦獎金\r\n5.個人或團體績效獎勵競賽*\r\n6.年終獎金\r\n7.年度旅遊\r\n8.利潤共享制(店主管)\r\n★歡慶節日★\r\n1.生日禮券(滿 3 個月)\r\n2.三節禮券/禮品(滿 3 個月)\r\n★制度★\r\n1.多元晉升管道\r\n2.年度工作績效調薪(每年 3 月/9 月)\r\n3.教育訓練\r'},
 ];
-export default HomePage;
+export default CompanyPage;

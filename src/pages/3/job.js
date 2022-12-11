@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Iframe from 'react-iframe';
 
-function HomePage () {
+function JobPage () {
     const {jobID} = useParams();
     const [name, setName] = useState("");
     const [company, setCompany] = useState("");
@@ -23,7 +23,7 @@ function HomePage () {
         setSalary_type(joblist[jobID].salary_type);
         setContent(joblist[jobID].content);
         setRequire(joblist[jobID].require);
-        let compID = joblist[jobID].num-1;
+        let compID = joblist[jobID].num - 1;
         setMap(companylist[compID].map);
         setIntro(companylist[compID].intro);
 
@@ -856,4 +856,4 @@ const companylist = [
     intro: '錢都 涮涮鍋，伴顧客走過 20 幾個年頭\n目前全省錢都於全台鍋類餐飲市占率超過一半，老字號以新鮮多元且高 CP 值的大眾火鍋著稱，是台灣小火鍋最具代表性的品牌。\n品牌願景：創造完美顧客體驗\n品牌使命：以親手調製的柴魚昆布大骨高湯、嚴選把關的新鮮食材、堅持守護品質的決心-讓顧客可以安心、放心。以選擇多樣的豐富餐點-滿足顧客多元的需求。\n主要服務項目:日式小火鍋'},
 ];
 
-export default HomePage;
+export default JobPage;

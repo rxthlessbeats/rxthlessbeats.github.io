@@ -1,6 +1,8 @@
 import './jobs.scss';
 import Header from '../global/header';
 import { useState, useEffect } from 'react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-
 const choices = ["餐飲臨售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
 const food = ["儲備幹部", "銷售", "內場", "外場", "人資"];
 const tech = ["軟體工程師","研發工程師","研發技術員","製成工程師","殷備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
@@ -13,30 +15,53 @@ function JobsPage () {
     const [techc, setTechc] = useState([false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, 
         false, false, false, false, false, false]);
     const [filter, setFilter] = useState([]);
-    const [save, setSave] = useState([false, true, true, false, true])
+    const [save, setSave] = useState([])
 
     useEffect(() => {
         if (localStorage.getItem("choosed")) setChoosed(JSON.parse(localStorage.getItem("choosed")));
         if (localStorage.getItem("foodc")) setFoodc(JSON.parse(localStorage.getItem("foodc")));
         if (localStorage.getItem("techc")) setTechc(JSON.parse(localStorage.getItem("techc")));
+        setSave(new Array(joblist.length).fill(false));
     }, []);
 
     useEffect(() => {
+        // Load Filter Array
         let newArr = [];
         var i;
-        for (i=0; i<choosed.length; i++) {
+
+        let allFood = true;
+        for (i=0; i<foodc.length; i++) {
+            if (!foodc[i]) {
+                allFood = false;
+                break;
+            }
+        }
+        if (allFood) newArr.push(choices[0]);
+
+        let allTech = true;
+        for(i=0; i<techc.length; i++) {
+            if (!techc[i]) {
+                allTech = false;
+                break;
+            }
+        }
+        if (allTech) newArr.push(choices[1]);
+
+        for (i=2; i<choosed.length; i++) {
             if (choosed[i]) newArr.push(choices[i]);
         }
-        for (i=0; i<foodc.length; i++) {
-            if (foodc[i]) newArr.push(food[i]);
+        if (!allFood) {
+            for (i=0; i<foodc.length; i++) {
+                if (foodc[i]) newArr.push(food[i]);
+            }
         }
-        for(i=0; i<techc.length; i++) {
-            if (techc[i]) newArr.push(tech[i]);
+        if (!allTech) {
+            for(i=0; i<techc.length; i++) {
+                if (techc[i]) newArr.push(tech[i]);
+            }
         }
-        // // console.log("?")
         setFilter(newArr);
     }, [setFilter, choosed, foodc, techc]);
-    // }, []);
 
     const deleteFilter = (idx) => {
         console.log("Delete" + String(filter[idx]));
@@ -46,8 +71,12 @@ function JobsPage () {
         // only set local storage when go to other pages
     };
 
+    // const savejob = (idx) => {
+
+    // }
     return (
         <div className="Jobs">
+            
             <Header/>
             <div className="body">
                 <div className="back" onClick={() => {
@@ -64,21 +93,23 @@ function JobsPage () {
                 <div className="jobs">
                     {joblist.map((j, idx) => (
                         <div className="j" key={idx}>
-                            <div className='jc'>
+                            <div className='jc nr'>
                                 <div className="name">{j.name}</div>
                                 <div className="req">{j.edu}</div>
                             </div>
-                            <div className='jc'>
+                            <div className='jc nc'>
                                 <div className="num">{j.num}</div>
                                 <div className="comp">{j.company}</div>
                             </div> 
-                            <div className='jc'>
+                            <div className='jc ps'>
                                 <div className='pla'>{j.place}</div>
-                                <div className='sal'>{j.salary}</div>
+                                <div className='sal'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div>
                             </div> 
                             {save[idx]?
-                                <div className='save y'>SAVE</div> :
-                                <div className='save'>NOT</div>
+                                // <div className="save" onClick={() => {}}><FontAwesomeIcon icon="fa-solid fa-bookmark"/></div> :
+                                <div className='save y'></div> :
+                                <div className='save'></div>
+                                // <div className="save" onClick={() => {}}><FontAwesomeIcon icon="fa-solid fa-bookmark"/></div>
                             }
                         </div>
                     ))}

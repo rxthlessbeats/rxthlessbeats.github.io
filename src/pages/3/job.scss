@@ -1,4 +1,4 @@
-.Home {
+.jobPage {
     width: 100vw;
     height: 100vh;
 
@@ -67,6 +67,9 @@
                         margin-inline: 2vw;
                         padding-top: 2vh;
                     }
+                    .content::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
             }
 
@@ -97,6 +100,9 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                    }
+                    .require::-webkit-scrollbar {
+                        display: none;
                     }
                 }
 
@@ -146,6 +152,9 @@
                         color: #000000;
                         margin-inline: 2vw;
                         padding-top: 2vh;
+                    }
+                    .info::-webkit-scrollbar {
+                        display: none;
                     }
                 }
             }
