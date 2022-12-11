@@ -14,7 +14,7 @@ function JobPage () {
     const [salary_type, setSalary_type] = useState("");
     const [map, setMap] = useState("");
     const [intro, setIntro] = useState("");
-    // const [text, setText] = useState('');
+    const [text, setText] = useState('');
 
     useEffect(() => {
         setName(joblist[jobID].name);
@@ -37,14 +37,16 @@ function JobPage () {
     }, [jobID]);
 
     return (
-        <div className="jobPage"> 
+        <div className="Home"> 
+        {/* <div className="Home" onClick={() => {window.location.href='/filter'}}> */}
             <Header/>
+            {/* {jobID} 哪個工作 */}
             <div className="body">
                 <div className="bg">
                     <div className='left'>
                         <div className='name'>{name}</div>
                         <div className='company'>{company}</div>
-                        <div className='salary'>待遇 {salary_type==="月薪"? "月薪":""}{salary}</div>
+                        <div className='salary'>待遇 {salary}</div>
                         <div className='content-title'>工作內容</div>
                         <div className='content-box'>
                             <div className='content'>{content}</div>
