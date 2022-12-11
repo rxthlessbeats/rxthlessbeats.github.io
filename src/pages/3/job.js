@@ -14,6 +14,7 @@ function JobPage () {
     const [salary_type, setSalary_type] = useState("");
     const [map, setMap] = useState("");
     const [intro, setIntro] = useState("");
+    const [compID, setCompID] = useState("");
     // const [text, setText] = useState('');
 
     useEffect(() => {
@@ -26,6 +27,7 @@ function JobPage () {
         let compID = joblist[jobID].num - 1;
         setMap(companylist[compID].map);
         setIntro(companylist[compID].intro);
+        setCompID(joblist[jobID].num - 1);
 
         // setText(data.spotData.description.split('\\n').map(
 		// 	(str, id) => {
@@ -59,7 +61,7 @@ function JobPage () {
                         <Iframe className='map' url={map}/>
                         <div className='info-title-box'>
                             <div className='info-title'>公司簡介與福利</div>
-                            <div className='welfare' onClick={() => {window.location.href='/company/'+ jobID}}>查看公司福利</div>
+                            <div className='welfare' onClick={() => {window.location.href='/company/'+ compID}}>查看公司福利</div>
                         </div>
                         <div className='info-box'>
                             <div className='info'>{intro}</div>
