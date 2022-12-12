@@ -89,7 +89,7 @@ function LocationPage () {
                     <div className='finish' onClick={() => {
                         clear();
                         window.location.href = '/';
-                    }}>以查詢完, 離開</div>
+                    }}>已查詢完, 離開</div>
                 </div>
             </div>
             </div>
