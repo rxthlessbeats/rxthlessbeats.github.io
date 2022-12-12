@@ -245,7 +245,10 @@ function JobsPage () {
                             </div> 
                             <div className='jc ps'>
                                 <div className='pla'>{j.place}</div>
-                                <div className='sal'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div>
+                                <div className='sal'>
+                                    <div className='sa'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div>
+                                    <div className='fill'/>
+                                </div>
                             </div> 
                             {save[idx]?
                                 <div className="save y" onClick={(e) => {saveJob(e, idx)}}><FontAwesomeIcon icon="fa-bookmark"/></div> :

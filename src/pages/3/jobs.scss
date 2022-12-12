@@ -137,7 +137,17 @@
             .sal {
                 float: right;
                 margin-right: 10%;
-                color: #B30000;
+                display: inline-flex;
+                flex-direction: row;
+                
+                .sa {
+                    color: #B30000;
+                }
+
+                // .fill {
+                //     width: 10%;
+                //     flex-shrink: 0;
+                // }
             }
             .save {
                 position: absolute;
