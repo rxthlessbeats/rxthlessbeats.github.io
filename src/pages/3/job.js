@@ -8,6 +8,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function JobPage () {
     const {jobID} = useParams();
+    const {from} = useParams();
     const [name, setName] = useState("");
     const [company, setCompany] = useState("");
     const [salary, setSalary] = useState("");
@@ -78,7 +79,8 @@ function JobPage () {
                     </div>
                 </div>
                 <div className='cancel' onClick={() => {
-                    window.location.href='/jobs'
+                    if (from === '0') window.location.href='/jobs';
+                    else window.location.href='/location';
                     }}><FontAwesomeIcon icon={faXmark}/>
                 </div>
             </div>

@@ -9,7 +9,7 @@ fontawesome.library.add(faBookmark, faArrowLeft);
 
 const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "新北", "桃園", "新竹", "台中", "台南", "高雄"]; // 0~10
 const food = ["儲備幹部（餐）", "銷售", "內場", "外場", "人資", "其他（餐）"]; // 11~16
-const tech = ["軟體工程師","研發工程師","研發技術員","製程工程師","設備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
+const tech = ["軟體工程師","研發工程師","研發技術員","製程工程師","設備工程師","接案工程師","分析工程師","設計工程師","封裝工程師","助理工程師","客服工程師",
     "業務人員","技術工程師","測試工程師","行政人員","生產技術員","技術操作員","儲備幹部（科）","品保工程師","品保人員","其他（科）"];
 const all_filter = choices.concat(food).concat(tech);
 function JobsPage () {
@@ -233,7 +233,7 @@ function JobsPage () {
                         filter_true(j)? 
                         <div className="j" key={idx} onClick={() => {
                             store();
-                            window.location.href = '/job/'+idx
+                            window.location.href = '/job/'+idx+'/0'
                             }}>
                             <div className='jc nr'>
                                 <div className="name">{j.name}</div>
@@ -244,11 +244,12 @@ function JobsPage () {
                                 <div className="comp">{j.company}</div>
                             </div> 
                             <div className='jc ps'>
-                                <div className='pla'>{j.place}</div>
-                                <div className='sal'>
-                                    <div className='sa'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div>
-                                    <div className='fill'/>
-                                </div>
+                                {(j.place.length + j.salary.length > 25)? 
+                                    <><div className='pla l'>{j.place}</div>
+                                    <div className='sal l'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div></> : 
+                                    <><div className='pla'>{j.place}</div>
+                                    <div className='sal'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div></>
+                                }  
                             </div> 
                             {save[idx]?
                                 <div className="save y" onClick={(e) => {saveJob(e, idx)}}><FontAwesomeIcon icon="fa-bookmark"/></div> :
@@ -274,7 +275,7 @@ function JobsPage () {
                         save[idx]?
                         <div className="j" key={idx} onClick={() => {
                             store();
-                            window.location.href = '/job/'+idx
+                            window.location.href = '/job/'+idx+'/0'
                             }}>
                             <div className='jc nr'>
                                 <div className="name">{j.name}</div>
@@ -285,8 +286,12 @@ function JobsPage () {
                                 <div className="comp">{j.company}</div>
                             </div> 
                             <div className='jc ps'>
-                                <div className='pla'>{j.place}</div>
-                                <div className='sal'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div>
+                                {(j.place.length > 8)? 
+                                    <><div className='pla l'>{j.place}</div>
+                                    <div className='sal l'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div></> : 
+                                    <><div className='pla'>{j.place}</div>
+                                    <div className='sal'>{(j.salary_type === "月薪"? "月薪":"")}{j.salary}</div></>
+                                }  
                             </div> 
                             {save[idx]?
                                 <div className="save y" onClick={(e) => {saveJob(e, idx)}}><FontAwesomeIcon icon="fa-bookmark"/></div> :
@@ -301,6 +306,7 @@ function JobsPage () {
         </div>
     );
 };
+
 const joblist = [{name: '半導體業務人員', edu: '大學以上畢業', num: 1,
 company: '佳能半導體設備股份有限公司', place: '新竹地區', salary: '40000以上',
 job_type: '業務人員', place_type: '新竹', salary_type: '月薪'},
@@ -369,7 +375,7 @@ company: '宜特科技股份有限公司', place: '新竹地區', salary: '36000
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '業務工程師', edu: '大學以上畢業', num: 3,
 company: '宜特科技股份有限公司', place: '新竹地區', salary: '面議',
-job_type: '業務工程師', place_type: '新竹', salary_type: '面議'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '面議'},
 {name: '副管理師', edu: '大專以上畢業', num: 3,
 company: '宜特科技股份有限公司', place: '新竹地區', salary: '36000~50000',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
@@ -393,7 +399,7 @@ company: '宜特科技股份有限公司', place: '新竹地區', salary: '36000
 job_type: '客服工程師', place_type: '新竹', salary_type: '月薪'},
 {name: '生產線技術員', edu: '不拘', num: 3,
 company: '宜特科技股份有限公司', place: '新竹地區', salary: '27000~45000',
-job_type: '生產線技術員', place_type: '新竹', salary_type: '月薪'},
+job_type: '生產技術員', place_type: '新竹', salary_type: '月薪'},
 {name: '電子產品可靠度副工程師/工程師', edu: '大學以上畢業', num: 4,
 company: '德凱宜特股份有限公司', place: '新竹地區', salary: '33000~45000',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
@@ -402,15 +408,15 @@ company: '德凱宜特股份有限公司', place: '新竹地區', salary: '33000
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '製程設備工程師', edu: '高中以上畢業', num: 5,
 company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '35000以上',
-job_type: '製程設備工程師', place_type: '新竹', salary_type: '月薪'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: 'MIS 網路管理工程師', edu: '高中以上畢業', num: 5,
-company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: ' 30000以上',
+company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '30000以上',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '電控配線工程師', edu: '高中以上畢業', num: 5,
 company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '35000以上',
-job_type: '其他', place_type: '新竹', salary_type: '月薪'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: 'QA 人員', edu: '高中以上畢業', num: 5,
-company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: ' 30000以上',
+company: '晶鼎磊晶科技股份有限公司', place: '新竹地區', salary: '30000以上',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '生產技術員', edu: '不拘', num: 6,
 company: '昱嘉科技股份有限公司', place: '新竹地區', salary: '25250~35000',
@@ -441,7 +447,7 @@ company: '泰詠電子股份有限公司', place: '新竹地區', salary: '29500
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '製造部技術員', edu: '不拘', num: 8,
 company: '泰詠電子股份有限公司', place: '新竹地區', salary: '29500~50000',
-job_type: '製造技術員', place_type: '新竹', salary_type: '月薪'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '庶務行政管理師', edu: '不拘', num: 8,
 company: '泰詠電子股份有限公司', place: '新竹地區', salary: '32000~36000',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
@@ -456,7 +462,7 @@ company: '台灣美日先進光罩股份有限公司', place: '新竹地區', sa
 job_type: '助理工程師', place_type: '新竹', salary_type: '月薪'},
 {name: '廠務工程師', edu: '大專以上畢業', num: 9,
 company: '台灣美日先進光罩股份有限公司', place: '新竹地區', salary: '40000以上',
-job_type: '廠務工程師其他（科）', place_type: '新竹', salary_type: '月薪'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '客服副工程師', edu: '大專以上畢業', num: 9,
 company: '台灣美日先進光罩股份有限公司', place: '新竹地區', salary: '35000~38000',
 job_type: '客服工程師', place_type: '新竹', salary_type: '月薪'},
@@ -509,14 +515,14 @@ job_type: '儲備幹部（科）', place_type: '新竹', salary_type: '月薪'},
 company: '華夏玻璃股份有限公司', place: '新竹地區', salary: '28000 以上',
 job_type: '儲備幹部（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '產線技術員', edu: '不拘', num: 11,
-company: '晶成半導體股份有限公司', place: '新竹地區', salary: ' 33300 以上',
+company: '晶成半導體股份有限公司', place: '新竹地區', salary: '33300 以上',
 job_type: '生產技術員', place_type: '新竹', salary_type: '月薪'},
 {name: '產線助理', edu: '不拘', num: 11,
 company: '晶成半導體股份有限公司', place: '新竹地區', salary: '27300 以上',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '成品庫房技術員', edu: '不拘', num: 11,
 company: '晶成半導體股份有限公司', place: '新竹地區', salary: '27300 以上',
-job_type: '技術員', place_type: '新竹', salary_type: '月薪'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '排程技術員', edu: '不拘', num: 11,
 company: '晶成半導體股份有限公司', place: '新竹地區', salary: '27300 以上',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
@@ -528,7 +534,7 @@ company: '晶成半導體股份有限公司', place: '新竹地區', salary: '�
 job_type: '設備工程師', place_type: '新竹', salary_type: '面議'},
 {name: '廠務工程師', edu: '大專以上畢業', num: 11,
 company: '晶成半導體股份有限公司', place: '新竹地區', salary: '27300~50000 ',
-job_type: '廠務工程師', place_type: '新竹', salary_type: '月薪'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '量產整合高級工程師', edu: '碩士以上畢業', num: 11,
 company: '晶成半導體股份有限公司', place: '新竹地區', salary: '面議',
 job_type: '其他（科）', place_type: '新竹', salary_type: '面議'},
@@ -567,7 +573,7 @@ company: '晶成半導體股份有限公司', place: '新竹地區', salary: '�
 job_type: '其他（科）', place_type: '新竹', salary_type: '面議'},
 {name: '成會高級管理師', edu: '大學以上畢業', num: 11,
 company: '晶成半導體股份有限公司', place: '新竹地區', salary: '面議',
-job_type: '管理師', place_type: '新竹', salary_type: '面議'},
+job_type: '其他（科）', place_type: '新竹', salary_type: '面議'},
 {name: '智慧製造自動化工程師', edu: '大學以上畢業', num: 11,
 company: '晶成半導體股份有限公司', place: '新竹地區', salary: '面議',
 job_type: '其他（科）', place_type: '新竹', salary_type: '面議'},
@@ -632,7 +638,7 @@ job_type: '助理工程師', place_type: '新竹', salary_type: '月薪'},
 company: '勵威電子股份有限公司 ', place: '新竹地區', salary: '30000~42000',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: 'FAE 應用工程師(客服)', edu: '不拘', num: 13,
-company: '勵威電子股份有限公司 ', place: '新竹地區', salary: ' 40000以上',
+company: '勵威電子股份有限公司 ', place: '新竹地區', salary: '40000以上',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '機電助理工程師', edu: '不拘', num: 14,
 company: '震江電力科技股份有限公司', place: '新竹地區/台南市', salary: '31000以上',
@@ -644,7 +650,7 @@ job_type: '其他（科）', place_type: '新竹', salary_type: '面議'},
 company: '震江電力科技股份有限公司', place: '新竹地區', salary: '27800~29400',
 job_type: '其他（科）', place_type: '新竹', salary_type: '月薪'},
 {name: '監工助理工程師', edu: '不拘', num: 14,
-company: '震江電力科技股份有限公司', place: '新竹地區', salary: ' 30000~37000',
+company: '震江電力科技股份有限公司', place: '新竹地區', salary: '30000~37000',
 job_type: '助理工程師', place_type: '新竹', salary_type: '月薪'},
 {name: '市場行銷專員', edu: '大學以上畢業', num: 14,
 company: '震江電力科技股份有限公司', place: '新竹地區', salary: '面議',
@@ -755,35 +761,35 @@ job_type: '外場', place_type: '新竹', salary_type: '月薪'},
 company: '小蒙牛股份有限公司', place: '新竹地區', salary: '時薪168~210',
 job_type: '外場', place_type: '新竹', salary_type: '時薪'},
 {name: '業務司機', edu: '不拘', num: 24,
-company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: ' 30000以上',
+company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '30000以上',
 job_type: '其他（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '商務通路開發專案主任(新竹駐區)', edu: '不拘', num: 24,
-company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: ' 32000以上',
+company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '32000以上',
 job_type: '其他（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '庫務專員', edu: '不拘', num: 24,
 company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '27000~33000',
 job_type: '其他（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '引貨業務專員', edu: '不拘', num: 24,
-company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: ' 30000以上',
+company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '新竹地區', salary: '30000以上',
 job_type: '其他（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '人資管理師', edu: '大學以上畢業', num: 24,
-company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: ' 33000~36000 ',
+company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: '33000~36000 ',
 job_type: '人資', place_type: '桃園', salary_type: '月薪'},
 {name: '品管人員', edu: '高中以上畢業', num: 24,
 company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: '30000~35000',
 job_type: '其他（餐）', place_type: '桃園', salary_type: '月薪'},
 {name: '設備維修工程師', edu: '不拘', num: 24,
-company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: ' 38000以上',
+company: '光泉食品股份有限公司光泉牧場股份有限公司', place: '桃園市', salary: '38000以上',
 job_type: '其他（餐）', place_type: '桃園', salary_type: '月薪'},
 {name: '儲備幹部', edu: '不拘', num: 25,
 company: '樂檸鮮事股份有限公司', place: '新竹地區', salary: '34000',
-job_type: '儲備幹部 （餐）', place_type: '新竹', salary_type: '月薪'},
+job_type: '儲備幹部（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '【牛角燒肉 / 温野菜火鍋】早班/晚班 固定正職人員', edu: '不拘', num: 26,
 company: '東京牛角股份有限公司', place: '新竹地區', salary: '32000~34000',
 job_type: '內場', place_type: '新竹', salary_type: '月薪'},
-{name: '【牛角燒肉 / 温野菜火鍋】─ 大台北地區內外場儲備幹部 ', edu: '大專以上畢業', num: 26,
+{name: '【牛角燒肉 / 温野菜火鍋】─ 大台北地區內外場儲備幹部', edu: '大專以上畢業', num: 26,
 company: '東京牛角股份有限公司', place: '台北市', salary: '36000~40000',
-job_type: '儲備幹部  （餐）', place_type: '台北', salary_type: '月薪'},
+job_type: '儲備幹部（餐）', place_type: '台北', salary_type: '月薪'},
 {name: '【牛角/温野菜】早、晚班兼職夥伴', edu: '不拘', num: 26,
 company: '東京牛角股份有限公司', place: '新竹地區', salary: '時薪185~200',
 job_type: '內場', place_type: '新竹', salary_type: '時薪'},
@@ -792,13 +798,13 @@ company: '王座國際餐飲(杏子豬排/京都勝牛)', place: '新竹地區',
 job_type: '內場', place_type: '新竹', salary_type: '時薪'},
 {name: '儲備幹部', edu: '不拘', num: 27,
 company: '王座國際餐飲(杏子豬排/京都勝牛)', place: '新竹地區', salary: '31000~34000',
-job_type: '儲備幹部  （餐）', place_type: '新竹', salary_type: '月薪'},
+job_type: '儲備幹部（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '幹部/組長', edu: '不拘', num: 27,
 company: '王座國際餐飲(杏子豬排/京都勝牛)', place: '新竹地區', salary: '34000~39500',
 job_type: '其他（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '儲備店長', edu: '不拘', num: 27,
 company: '王座國際餐飲(杏子豬排/京都勝牛)', place: '新竹地區', salary: '42000~52000',
-job_type: '儲備幹部  （餐）', place_type: '新竹', salary_type: '月薪'},
+job_type: '儲備幹部（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '正職人員', edu: '不拘', num: 28,
 company: '好食國際投資股份有限公司客美多新竹分公司', place: '新竹地區', salary: '30000~33000',
 job_type: '內場', place_type: '新竹', salary_type: '月薪'},
@@ -807,7 +813,7 @@ company: '好食國際投資股份有限公司客美多新竹分公司', place: 
 job_type: '內場', place_type: '新竹', salary_type: '時薪'},
 {name: '門市儲備店經理', edu: '高中以上畢業', num: 29,
 company: '荃鴻股份有限公司', place: '新竹地區', salary: '32300以上',
-job_type: '儲備幹部  （餐）', place_type: '新竹', salary_type: '月薪'},
+job_type: '儲備幹部（餐）', place_type: '新竹', salary_type: '月薪'},
 {name: '門市儲備店幹部', edu: '高中以上畢業', num: 29,
 company: '荃鴻股份有限公司', place: '新竹地區', salary: '27500以上',
 job_type: '儲備幹部（餐）', place_type: '新竹', salary_type: '月薪'},

@@ -133,21 +133,17 @@
             }
             .pla {
                 display: inline-block;
+                min-width: 20vw;
+                // background-color: #516165;
             }
             .sal {
                 float: right;
                 margin-right: 10%;
-                display: inline-flex;
-                flex-direction: row;
-                
-                .sa {
-                    color: #B30000;
-                }
-
-                // .fill {
-                //     width: 10%;
-                //     flex-shrink: 0;
-                // }
+                color: #B30000;
+            }
+            .l {
+                display: inline-block;
+                float: none;
             }
             .save {
                 position: absolute;
