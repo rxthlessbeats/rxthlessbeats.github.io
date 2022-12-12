@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
-const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"];
-const food = ["儲備幹部", "銷售", "內場", "外場", "人資"];
+const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "新北", "桃園", "新竹", "台中", "台南", "高雄"];
+const food = ["儲備幹部", "銷售", "內場", "外場", "人資", "其他"];
 const tech = ["軟體工程師","研發工程師","研發技術員","製程工程師","設備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
-    "業務人員","技術工程師","測試工程師","行政人員","生產技術員","技術操作員","焊錫技術員","品保工程師","品保人員","品管包装員",];
+    "業務人員","技術工程師","測試工程師","行政人員","生產技術員","技術操作員","儲備幹部","品保工程師","品保人員","其他"];
 function FilterPage () {
     const [choosed, setChoosed] = useState([false, false, false, false, false, false, false, false, false, false]);
     const [morejob, setMorejob] = useState(false);
@@ -198,7 +198,7 @@ function FilterPage () {
                             <div className="title">工作地區</div>
                             <div className='choices'>
                                 {choices.map((c, idx) => (
-                                    (idx >= 4 && idx <= 9)? 
+                                    (idx >= 4 && idx <= 10)? 
                                     <>{choosed[idx]? 
                                     <div className="ch y" onClick={() => {choose(idx)}}>{c}</div> : 
                                     <div className="ch" onClick={() => {choose(idx)}}>{c}</div>}</>
