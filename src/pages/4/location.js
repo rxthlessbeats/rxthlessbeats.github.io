@@ -47,7 +47,7 @@ function LocationPage () {
                         <div className='map-title1'>廠商位置圖</div>
                         <div className='map-title2'>歡迎根據位置圖去找公司諮詢</div>
                     </div>
-                    <img className="pic" src={require("../../images/攤位圖.png")} alt="攤位圖"></img>
+                    <img className="pic" src={require("../../images/地圖.png")} alt="攤位圖"></img>
                 </div>
                 <div className='save_all'>
                     <div className='save_block'>
