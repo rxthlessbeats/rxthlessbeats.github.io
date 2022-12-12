@@ -60,7 +60,7 @@ function LocationPage () {
                             save[idx]?
                             <div className="j" key={idx} onClick={() => {
                                 store();
-                                window.location.href = '/job/'+idx
+                                window.location.href = '/job/'+idx + '/1';
                                 }}>
                                 <div className='jc nr'>
                                     <div className="name">{j.name}</div>

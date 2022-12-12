@@ -233,7 +233,7 @@ function JobsPage () {
                         filter_true(j)? 
                         <div className="j" key={idx} onClick={() => {
                             store();
-                            window.location.href = '/job/'+idx
+                            window.location.href = '/job/'+idx+'/0'
                             }}>
                             <div className='jc nr'>
                                 <div className="name">{j.name}</div>
@@ -275,7 +275,7 @@ function JobsPage () {
                         save[idx]?
                         <div className="j" key={idx} onClick={() => {
                             store();
-                            window.location.href = '/job/'+idx
+                            window.location.href = '/job/'+idx+'/0'
                             }}>
                             <div className='jc nr'>
                                 <div className="name">{j.name}</div>
