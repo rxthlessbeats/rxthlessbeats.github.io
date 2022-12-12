@@ -69,7 +69,10 @@
             }
             .wage {float: right;}
             .job {float: left;}
-            .place {margin-left: 27.5vw;}
+            .place {
+                width:45vw;
+                margin-left: 22.5vw;
+            }
             .continue {
                 position: absolute;
                 background-color: #DAC9B3;
