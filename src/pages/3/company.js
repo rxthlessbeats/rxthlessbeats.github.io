@@ -13,9 +13,21 @@ function CompanyPage () {
 
     useEffect(() => {
         setCompany(companylist[compID].name);
-        setContact(companylist[compID].contact);
-        setIntro(companylist[compID].intro);
-        setWelfare(companylist[compID].welfare);
+        setContact(companylist[compID].contact.split('\n').map(
+			(str) => {
+				return <>{str}<br></br></>
+			}
+		));
+        setIntro(companylist[compID].intro.split('\n').map(
+			(str) => {
+				return <>{str}<br></br></>
+			}
+		));
+        setWelfare(companylist[compID].welfare.split('\n').map(
+            (str) => {
+                return <>{str}<br></br></>
+            }
+        ))
     }, [compID]);
     return (
         <div className="companyPage">
