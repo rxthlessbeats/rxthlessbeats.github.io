@@ -33,6 +33,11 @@ function LocationPage () {
         newArr[idx] = !newArr[idx];
         setSave(newArr);
     };
+
+    const clear = () => {
+        localStorage.clear();
+    }
+
     return (
         <div className="location">
             <Header/>
@@ -78,6 +83,14 @@ function LocationPage () {
                             :<></>
                         ))}
                     </div>
+                    <div className='back' onClick={() => {
+                        store();
+                        window.location.href = '/jobs';
+                    }}>上一步</div>
+                    <div className='finish' onClick={() => {
+                        clear();
+                        window.location.href = '/';
+                    }}>以查詢完, 離開</div>
                 </div>
             </div>
             </div>
