@@ -54,7 +54,6 @@ function LocationPage () {
                         <div className='save_header'>
                             <FontAwesomeIcon icon="fa-bookmark" className='save y'/>
                             <div className='current'>目前選擇</div>
-                            <div className='view_all' onClick={() => {window.location.href="/location"}}>檢視全部</div>
                         </div>
                         <div className="jobs">
                         {joblist.map((j, idx) => (
@@ -90,7 +89,7 @@ function LocationPage () {
                     <div className='finish' onClick={() => {
                         clear();
                         window.location.href = '/';
-                    }}>以查詢完, 離開</div>
+                    }}>已查詢完, 離開</div>
                 </div>
             </div>
             </div>
