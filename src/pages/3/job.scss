@@ -30,8 +30,8 @@
                     font-size: 50px;
                     line-height: 55px;
                     color: #000000;
-                    margin-left: 2vw;
-                    margin-block: 2vh;
+                    padding-left: 2vw;
+                    padding-block: 2vh;
                 }
 
                 .company {
@@ -71,7 +71,7 @@
                         font-weight: 400;
                         font-size: 20px;
                         color: #000000;
-                        margin-inline: 2vw;
+                        padding-inline: 2vw;
                         padding-top: 2vh;
                         height: calc(100% - 4vh);
                     }

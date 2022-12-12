@@ -1,9 +1,10 @@
 import './jobs.scss';
 import Header from '../global/header';
 import { useState, useEffect } from 'react';
-import fontawesome from '@fortawesome/fontawesome'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark, faArrowLeft } from '@fortawesome/fontawesome-free-solid'
+import fontawesome from '@fortawesome/fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faArrowLeft } from '@fortawesome/fontawesome-free-solid';
 fontawesome.library.add(faBookmark, faArrowLeft);
 
 const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "新北", "桃園", "新竹", "台中", "台南", "高雄"]; // 0~10
@@ -219,7 +220,9 @@ function JobsPage () {
                     {all_filter.map((f, idx)=> (
                         filter_valid(idx)?
                         <div className='f' key={idx} >
-                            <div className='x' onClick={() => {deleteFilter(idx)}}>X</div>
+                            <div className='x' onClick={() => {
+                                deleteFilter(idx)
+                            }}><FontAwesomeIcon icon={faXmark}/></div>
                             {f}
                         </div> :
                         <></>

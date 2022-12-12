@@ -1,8 +1,6 @@
 import './filter.scss';
 import Header from './global/header';
 import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 const choices = ["餐飲零售業", "科技業", "時薪", "月薪", "台北", "新北", "桃園", "新竹", "台中", "台南", "高雄"];
 const food = ["儲備幹部", "銷售", "內場", "外場", "人資", "其他"];
@@ -157,10 +155,10 @@ function FilterPage () {
                                     <div className="choice t" onClick={() => {tchoose(idx)}}>{t}</div>)
                                 ))}
                             </div>
-                            <div className="cancel" onClick={() => {
-                                setMorejob(false);
-                            }}><FontAwesomeIcon icon={faCheck}/></div>
                         </div>
+                        <div className="cancel" onClick={() => {
+                                setMorejob(false);
+                        }}>下一步</div>
                     </div>
                     :
                     <div className="allcat">

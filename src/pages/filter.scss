@@ -70,7 +70,7 @@
             .wage {float: right;}
             .job {float: left;}
             .place {
-                width:45vw;
+                width:48vw;
                 margin-left: 22.5vw;
             }
             .continue {
@@ -195,19 +195,19 @@
             .y {
                 opacity: 100%;
             }
-            .cancel {
-                color: #FFFFFF;
-                background-color: #727272;
-                border-radius: 50%;
-                width: 3.4vw;
-                height: 3.4vw;
-                line-height: 3.4vw;
-                text-align: center;
-                position: absolute;
-                right: -1.7vw;
-                top: -1.7vw;
-                box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
-            }
+        }
+        .cancel {
+            font-size: 26px;
+            position: absolute;
+            top: 8vh;
+            right: 2.5vw;
+            line-height: 4vh;
+            background-color: #DAC9B3;
+            color: #6A6A6A;
+            padding: 1vh 2vw;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            vertical-align: baseline;
+            border-radius: 10px;
         }
     }
 }
