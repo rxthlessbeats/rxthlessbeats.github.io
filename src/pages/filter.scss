@@ -59,6 +59,7 @@
                         background: #E8E5E5;
                         border-radius: 20px;
                         opacity: 50%;
+                        box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
                     }
                     .y {
                         opacity: 100%;
@@ -78,6 +79,7 @@
                 padding: 0 5vw;
                 line-height: 8vh;
                 border-radius: 20px;
+                box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
             }
         }
     }
@@ -125,6 +127,7 @@
                         background: #E8E5E5;
                         border-radius: 20px;
                         opacity: 50%;
+                        box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
 
                         .down-line {
                             position: absolute;
@@ -184,6 +187,7 @@
                 margin: 1vh 0.7vw;
                 border-radius: 20px;
                 opacity: 50%;
+                box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
             }
             .y {
                 opacity: 100%;
@@ -199,6 +203,7 @@
                 position: absolute;
                 right: -1.7vw;
                 top: -1.7vw;
+                box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
             }
         }
     }
