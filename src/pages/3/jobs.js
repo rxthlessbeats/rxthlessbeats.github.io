@@ -6,10 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark, faArrowLeft } from '@fortawesome/fontawesome-free-solid'
 fontawesome.library.add(faBookmark, faArrowLeft);
 
-// import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-
 const choices = ["餐飲臨售業", "科技業", "時薪", "月薪", "台北", "桃園", "新竹", "台中", "台南", "高雄"]; // 0~9
 const food = ["儲備幹部", "銷售", "內場", "外場", "人資"]; // 10~14
-const tech = ["軟體工程師","研發工程師","研發技術員","製成工程師","殷備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
+const tech = ["軟體工程師","研發工程師","研發技術員","製成工程師","設備工程師","接案工程師","分析工程師","設計工程師","封装工程師","助理工程師","客服工程師",
     "業務人員","技術工程師","測試工程師","行政人員","生產技術員","技術操作員","焊錫技術員","品保工程師","品保人員","品管包装員"];
 const all_filter = choices.concat(food).concat(tech);
 function JobsPage () {
